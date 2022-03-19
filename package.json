@@ -1,0 +1,25 @@
+{
+  "name": "artsiom90-jsfe2022q1",
+  "version": "1.0.0",
+  "description": "Private repository for @artsiom90",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "style": "sass --watch shelter/pages/main/sass/style.scss shelter/pages/main/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/artsiom90-JSFE2022Q1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/artsiom90-JSFE2022Q1/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/artsiom90-JSFE2022Q1#readme",
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "sass": "^1.49.9"
+  }
+}
