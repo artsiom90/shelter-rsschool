@@ -64,6 +64,10 @@ header {
   width: 100%;
 }
 
+.main {
+  width: 100%;
+}
+
 .header-container {
   display: flex;
 }
@@ -140,15 +144,12 @@ header {
   border-bottom: 3px solid #F1CDB3;
 }
 
-.main {
-  width: 1280px;
-  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
-  min-height: 908px;
-}
-
 .hero-container {
-  padding-top: 180px;
   display: flex;
+  padding-top: 180px;
+  height: 908px;
+  margin-bottom: 80px;
+  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
 }
 
 .section-hero {
@@ -191,6 +192,48 @@ header {
   line-height: 130%;
   letter-spacing: 1.1px;
   color: #292929;
+}
+
+.section-about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 100px;
+}
+
+.section-about-img {
+  height: 408px;
+  width: 300px;
+  background: url("../../assets/images/about-pets.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.section-about-info {
+  margin-left: 10px;
+}
+
+.section-about-info > *:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.section-about-title {
+  max-width: 370px;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 1.1px;
+  color: #545454;
+}
+
+.section-about-desc {
+  max-width: 430px;
+  font-family: "Arial";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #4C4C4C;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,12 +1,9 @@
-.main {
-    width: 1280px;
-    background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
-    min-height: 908px;
-}
-
 .hero-container {
-    padding-top: 180px;
     display: flex;
+    padding-top: 180px;
+    height: 908px;
+    margin-bottom: 80px;
+    background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
 }
 
 .section-hero {
