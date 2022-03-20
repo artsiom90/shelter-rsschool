@@ -1,7 +1,6 @@
 .hero-container {
     padding-top: 180px;
     min-height: 908px;
-    margin-bottom: 80px;
     background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
 }
 
@@ -41,17 +40,4 @@
     background: url('../../assets/images/start-screen-puppy.png');
     background-repeat: no-repeat;
     background-size: contain;
-}
-
-.btn-fill {
-    width: 207px;
-    height: 52px;
-    background: #F1CDB3;
-    border-radius: 100px;
-    font-family: 'Georgia';
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 130%;
-    letter-spacing: 1.1px;
-    color: #292929;
 }
