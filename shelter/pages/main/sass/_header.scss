@@ -1,9 +1,10 @@
 .header-container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .logo {
-    margin-top: 60px;
+    margin: 60px 15px 0 0;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -39,6 +40,8 @@
 
 .navbar-list {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     column-gap: 35px;
 }
 
