@@ -1,6 +1,10 @@
+header {
+    position: absolute;
+    width: 100%;
+}
+
 .header-container {
     display: flex;
-    background-color: gray;
 }
 
 .logo {
@@ -49,6 +53,20 @@
     font-size: 15px;
     line-height: 160%;
     color: #CDCDCD;
+}
+
+.navbar-item>a:hover {
+    color: #FAFAFA;
+}
+
+.navbar-item>a:active {
+    padding-bottom: 2px;
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #FAFAFA;
+    border-bottom: 3px solid #F1CDB3;
 }
 
 .navbar-item-active>a {
