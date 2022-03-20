@@ -1,8 +1,9 @@
 .section-about {
+    padding-bottom: 100px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-bottom: 100px;
+    justify-content: center;
+    column-gap: 120px;
 }
 
 .section-about-img {
@@ -11,10 +12,6 @@
     background: url('../../assets/images/about-pets.png');
     background-repeat: no-repeat;
     background-position: right;
-}
-
-.section-about-info {
-    margin-left: 10px;
 }
 
 .section-about-info>*:not(:last-child) {

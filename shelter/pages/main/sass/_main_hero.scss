@@ -1,23 +1,24 @@
 .hero-container {
-    display: flex;
     padding-top: 180px;
-    height: 908px;
+    min-height: 908px;
     margin-bottom: 80px;
     background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
 }
 
 .section-hero {
-    height: 728px;
-    width: 100%;
-    background: url('../../assets/images/start-screen-puppy.png');
-    background-repeat: no-repeat;
-    background-position: right;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 42px;
+}
+
+.section-hero-info>*:not(:last-child) {
+    margin-bottom: 42px;
 }
 
 .section-hero-title {
     max-width: 310px;
     padding-top: 163px;
-    margin-bottom: 42px;
     font-family: 'Georgia';
     font-weight: 400;
     font-size: 44px;
@@ -27,12 +28,19 @@
 
 .section-hero-desc {
     max-width: 460px;
-    margin-bottom: 42px;
     font-family: 'Arial';
     font-weight: 400;
     font-size: 15px;
     line-height: 160%;
     color: #CDCDCD;
+}
+
+.section-hero-img {
+    height: 728px;
+    width: 698px;
+    background: url('../../assets/images/start-screen-puppy.png');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .btn-fill-sm {
