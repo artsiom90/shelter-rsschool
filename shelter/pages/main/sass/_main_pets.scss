@@ -12,13 +12,13 @@
 }
 
 .section-pets-title {
-    max-width: 400px;
+    max-width: 420px;
     text-align: center;
     font-family: 'Georgia';
     font-weight: 400;
     font-size: 35px;
     line-height: 130%;
-    letter-spacing: 1.1px;
+    letter-spacing: 2.1px;
     color: #545454;
 }
 
@@ -41,11 +41,19 @@
     text-align: center;
     background: #FAFAFA;
     border-radius: 9px;
+    transition: 0.3s;
+}
+
+.section-pets-slider-card img {
+    border-radius: 9px;
+}
+
+.section-pets-slider-card:hover {
+    background: #FFFFFF;
 }
 
 .section-pets-slider-card>* {
     margin-bottom: 30px;
-    cursor: pointer;
 }
 
 .slider-card-name {

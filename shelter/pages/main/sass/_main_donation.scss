@@ -3,16 +3,16 @@
 }
 
 .section-donation {
-    padding: 90px 0 110px 0;
+    padding: 80px 0 80px 0;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     column-gap: 30px;
     row-gap: 60px;
 }
 
 .section-donation-img {
+    margin-top: 10px;
     height: 261px;
     width: 505px;
     background: url('../../assets/images/donation-dog.png');
@@ -30,7 +30,7 @@
     font-weight: 400;
     font-size: 35px;
     line-height: 130%;
-    letter-spacing: 0.5px;
+    letter-spacing: 2px;
     color: #545454;
 }
 
@@ -40,7 +40,7 @@
     font-weight: 400;
     font-size: 15px;
     line-height: 110%;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.9px;
     color: #545454;
 }
 
@@ -61,7 +61,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 115%;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.2px;
     color: #545454;
     background: #F1CDB3;
 }

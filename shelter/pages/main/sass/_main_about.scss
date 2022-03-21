@@ -11,7 +11,7 @@
     width: 300px;
     background: url('../../assets/images/about-pets.png');
     background-repeat: no-repeat;
-    background-position: right;
+    background-size: contain;
 }
 
 .section-about-info>*:not(:last-child) {
@@ -19,12 +19,13 @@
 }
 
 .section-about-title {
+    padding-top: 14px;
     max-width: 370px;
     font-family: 'Georgia';
     font-weight: 400;
     font-size: 35px;
     line-height: 130%;
-    letter-spacing: 1.1px;
+    letter-spacing: 2.1px;
     color: #545454;
 }
 

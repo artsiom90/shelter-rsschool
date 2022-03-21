@@ -11,25 +11,23 @@
 }
 
 .logo-title {
-    width: 184px;
-    height: 35px;
+    width: 190px;
     font-family: 'Georgia';
     font-weight: 400;
     font-size: 32px;
     line-height: 110%;
     color: #F1CDB3;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 }
 
 .logo-subtitle {
-    width: 179px;
-    height: 15px;
+    width: 180px;
     font-family: 'Arial';
     font-weight: 400;
     font-size: 13px;
     line-height: 15px;
-    letter-spacing: 1.1px;
     text-align: right;
+    letter-spacing: 1.2px;
     color: #FFFFFF;
 }
 
@@ -42,7 +40,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 35px;
+    column-gap: 36px;
 }
 
 .navbar-item>a {
@@ -55,16 +53,7 @@
 
 .navbar-item>a:hover {
     color: #FAFAFA;
-}
-
-.navbar-item>a:active {
-    padding-bottom: 2px;
-    font-family: 'Arial';
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 160%;
-    color: #FAFAFA;
-    border-bottom: 3px solid #F1CDB3;
+    transition: 0.3s;
 }
 
 .navbar-item-active>a {

@@ -1,26 +1,30 @@
 .footer-container {
-    padding-top: 56px;
+    padding-top: 40px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 }
 
-.footer-container span {
-    max-width: 260px;
-    font-family: 'Georgia';
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.5px;
-    color: #F1CDB3;
+.footer-contacts {
+    padding-top: 16px;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: 160px;
 }
 
-.footer-contacts {
+.footer-contacts>div {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    row-gap: 43px;
+}
+
+.footer-contacts-left {
+    row-gap: 42px;
+}
+
+.footer-contacts-right {
+    row-gap: 32px;
+    flex-grow: 1;
 }
 
 .footer-title {
@@ -29,15 +33,28 @@
     font-weight: 400;
     font-size: 35px;
     line-height: 130%;
-    letter-spacing: 0.5px;
     color: #FFFFFF;
 }
 
+.footer-title:nth-child(1) {
+    letter-spacing: 2px;
+}
+
 .contacts {
-    max-width: 280px;
     display: flex;
     align-items: center;
     column-gap: 20px;
+}
+
+.contacts span {
+    display: inline-block;
+    max-width: 280px;
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 1.2px;
+    color: #F1CDB3;
 }
 
 .contacts:last-child {
