@@ -393,4 +393,82 @@ header {
   color: #545454;
 }
 
+.donation-container {
+  background: #F6F6F6;
+}
+
+.section-donation {
+  padding: 90px 0 110px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 60px;
+}
+
+.section-donation-img {
+  height: 261px;
+  width: 505px;
+  background: url("../../assets/images/donation-dog.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.section-donation-info > * {
+  margin-bottom: 20px;
+}
+
+.section-donation-title {
+  max-width: 300px;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+  color: #545454;
+}
+
+.section-donation-subtitle {
+  display: inline-block;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.5px;
+  color: #545454;
+}
+
+.section-donation-payment {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  padding: 10px 15px;
+  max-width: 349px;
+  background: #F1CDB3;
+  border-radius: 9px;
+}
+
+.credit-card-data-form input {
+  width: 274px;
+  outline: none;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.5px;
+  color: #545454;
+  background: #F1CDB3;
+}
+
+.section-donation-desc {
+  max-width: 380px;
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #B2B2B2;
+}
+
 /*# sourceMappingURL=style.css.map */
