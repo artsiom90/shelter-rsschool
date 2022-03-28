@@ -24,6 +24,7 @@
 .section-pets-cards-list {
     margin-bottom: 60px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     column-gap: 40px;
     row-gap: 30px;
@@ -53,7 +54,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
-    letter-spacing: 1.1px;
+    letter-spacing: 1px;
     color: #545454;
 }
 

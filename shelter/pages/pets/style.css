@@ -201,7 +201,7 @@ header {
   font-size: 13px;
   line-height: 15px;
   text-align: right;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.3px;
   color: #292929;
 }
 
@@ -266,6 +266,7 @@ header {
 .section-pets-cards-list {
   margin-bottom: 60px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   column-gap: 40px;
   row-gap: 30px;
@@ -295,13 +296,83 @@ header {
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
-  letter-spacing: 1.1px;
+  letter-spacing: 1px;
   color: #545454;
 }
 
 .section-pets-pagination {
   display: flex;
   gap: 20px;
+}
+
+.footer-container {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
+}
+
+.footer-contacts {
+  padding-top: 16px;
+  display: flex;
+  gap: 160px;
+}
+
+.footer-contacts > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contacts-left {
+  row-gap: 42px;
+}
+
+.footer-contacts-right {
+  row-gap: 32px;
+}
+
+.footer-title {
+  width: 280px;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  color: #FFFFFF;
+}
+
+.footer-title:nth-child(1) {
+  letter-spacing: 2px;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.contacts span {
+  display: inline-block;
+  max-width: 280px;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 1.2px;
+  color: #F1CDB3;
+}
+
+.contacts:last-child {
+  padding-bottom: 60px;
+}
+
+.footer-img {
+  margin-left: auto;
+  height: 310px;
+  width: 300px;
+  background: url("../../assets/images/footer-puppy.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /*# sourceMappingURL=style.css.map */
