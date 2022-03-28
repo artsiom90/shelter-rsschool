@@ -10,6 +10,15 @@
     row-gap: 10px;
 }
 
+@media(max-width:850px) {
+    .header-logo {
+        margin: 30px 15px 0 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+}
+
 .logo-title {
     width: 190px;
     font-family: 'Georgia';
@@ -34,6 +43,13 @@
 .header-navbar {
     margin-left: auto;
     margin-top: 76px;
+}
+
+@media(max-width:850px) {
+    .header-navbar {
+        margin-left: auto;
+        margin-top: 46px;
+    }
 }
 
 .navbar-list {

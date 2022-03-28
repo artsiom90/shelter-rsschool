@@ -28,13 +28,24 @@
     column-gap: 53px;
 }
 
+@media(max-width: 850px) {
+    .section-pets-slider {
+        column-gap: 12px;
+    }
+}
+
 .section-pets-slider-cards {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     column-gap: 90px;
     row-gap: 60px;
+}
+
+@media(max-width: 950px) {
+    .section-pets-slider-cards {
+        column-gap: 40px;
+    }
 }
 
 .section-pets-slider-card {
@@ -42,6 +53,16 @@
     background: #FAFAFA;
     border-radius: 9px;
     transition: 0.3s;
+}
+
+@media(max-width: 1240px) {
+    .section-pets-slider-cards {
+        flex-wrap: wrap;
+    }
+
+    .section-pets-slider-card:last-child {
+        display: none;
+    }
 }
 
 .section-pets-slider-card img {

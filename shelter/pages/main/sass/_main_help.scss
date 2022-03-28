@@ -30,6 +30,18 @@
     align-items: center;
 }
 
+@media(max-width: 1024px) {
+    .section-help-items {
+        column-gap: 60px;
+        row-gap: 53px;
+    }
+
+    .help-item-name {
+        width: 170px;
+        text-align: center;
+    }
+}
+
 .help-item-icon {
     width: 60px;
     height: 60px;

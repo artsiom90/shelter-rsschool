@@ -1,7 +1,12 @@
 .hero-container {
     padding-top: 180px;
-    min-height: 908px;
     background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+}
+
+@media(max-width:850px) {
+    .hero-container {
+        padding-top: 150px;
+    }
 }
 
 .section-hero {
@@ -11,8 +16,19 @@
     column-gap: 42px;
 }
 
+.section-hero-info {
+    padding-bottom: 100px;
+}
+
 .section-hero-info>*:not(:last-child) {
     margin-bottom: 42px;
+}
+
+@media(max-width:850px) {
+    .section-hero-btn {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .section-hero-title {
@@ -25,6 +41,12 @@
     color: #FFFFFF;
 }
 
+@media(max-width:1279px) {
+    .section-hero-title {
+        padding-top: 0;
+    }
+}
+
 .section-hero-desc {
     max-width: 460px;
     font-family: 'Arial';
@@ -35,9 +57,17 @@
 }
 
 .section-hero-img {
+    margin-left: auto;
     height: 728px;
     width: 698px;
     background: url('../../assets/images/start-screen-puppy.png');
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+@media(max-width:1024px) {
+    .section-hero-img {
+        height: 593px;
+        width: 569px;
+    }
 }

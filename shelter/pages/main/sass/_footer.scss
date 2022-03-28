@@ -6,15 +6,41 @@
     background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 }
 
+@media (max-width: 850px) {
+    .footer-container {
+        padding-top: 0;
+    }
+}
+
 .footer-contacts {
     padding-top: 16px;
     display: flex;
     gap: 160px;
 }
 
+@media (max-width: 1200px) {
+    .footer-contacts {
+        flex: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 950px) {
+    .footer-contacts {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 850px) {
+    .footer-contacts {
+        padding-top: 30px;
+    }
+}
+
 .footer-contacts>div {
     display: flex;
     flex-direction: column;
+
 }
 
 .footer-contacts-left {
@@ -46,7 +72,7 @@
 
 .contacts a {
     display: inline-block;
-    max-width: 280px;
+    max-width: 260px;
     font-family: 'Georgia';
     font-weight: 400;
     font-size: 20px;
@@ -64,6 +90,12 @@
     padding-bottom: 60px;
 }
 
+@media (max-width: 1200px) {
+    .contacts:last-child {
+        padding-bottom: 65px;
+    }
+}
+
 .footer-img {
     margin-left: auto;
     height: 310px;
@@ -71,4 +103,10 @@
     background: url('../../assets/images/footer-puppy.png');
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+@media (max-width: 1200px) {
+    .footer-img {
+        margin: auto;
+    }
 }

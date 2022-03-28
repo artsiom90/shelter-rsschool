@@ -60,6 +60,11 @@ h6 {
   padding: 0 40px;
 }
 
+@media (max-width: 870px) {
+  .container {
+    padding: 0 30px;
+  }
+}
 header {
   position: absolute;
   width: 100%;
@@ -144,6 +149,14 @@ header {
   row-gap: 10px;
 }
 
+@media (max-width: 850px) {
+  .header-logo {
+    margin: 30px 15px 0 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
 .logo-title {
   width: 190px;
   font-family: "Georgia";
@@ -170,6 +183,12 @@ header {
   margin-top: 76px;
 }
 
+@media (max-width: 850px) {
+  .header-navbar {
+    margin-left: auto;
+    margin-top: 46px;
+  }
+}
 .navbar-list {
   display: flex;
   flex-wrap: wrap;
@@ -202,10 +221,14 @@ header {
 
 .hero-container {
   padding-top: 180px;
-  min-height: 908px;
   background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
 }
 
+@media (max-width: 850px) {
+  .hero-container {
+    padding-top: 150px;
+  }
+}
 .section-hero {
   display: flex;
   flex-wrap: wrap;
@@ -213,10 +236,20 @@ header {
   column-gap: 42px;
 }
 
+.section-hero-info {
+  padding-bottom: 100px;
+}
+
 .section-hero-info > *:not(:last-child) {
   margin-bottom: 42px;
 }
 
+@media (max-width: 850px) {
+  .section-hero-btn {
+    display: flex;
+    justify-content: center;
+  }
+}
 .section-hero-title {
   max-width: 310px;
   padding-top: 163px;
@@ -227,6 +260,11 @@ header {
   color: #FFFFFF;
 }
 
+@media (max-width: 1279px) {
+  .section-hero-title {
+    padding-top: 0;
+  }
+}
 .section-hero-desc {
   max-width: 460px;
   font-family: "Arial";
@@ -237,6 +275,7 @@ header {
 }
 
 .section-hero-img {
+  margin-left: auto;
   height: 728px;
   width: 698px;
   background: url("../../assets/images/start-screen-puppy.png");
@@ -244,6 +283,12 @@ header {
   background-size: contain;
 }
 
+@media (max-width: 1024px) {
+  .section-hero-img {
+    height: 593px;
+    width: 569px;
+  }
+}
 .section-about {
   padding: 80px 0 100px 0;
   display: flex;
@@ -252,6 +297,13 @@ header {
   column-gap: 120px;
 }
 
+@media (max-width: 930px) {
+  .section-about {
+    flex-direction: column-reverse;
+    align-items: center;
+    row-gap: 80px;
+  }
+}
 .section-about-img {
   height: 408px;
   width: 300px;
@@ -275,6 +327,11 @@ header {
   color: #545454;
 }
 
+@media (max-width: 850px) {
+  .section-about-title {
+    padding-top: 0;
+  }
+}
 .section-about-desc {
   max-width: 430px;
   font-family: "Arial";
@@ -314,15 +371,24 @@ header {
   column-gap: 53px;
 }
 
+@media (max-width: 850px) {
+  .section-pets-slider {
+    column-gap: 12px;
+  }
+}
 .section-pets-slider-cards {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   column-gap: 90px;
   row-gap: 60px;
 }
 
+@media (max-width: 950px) {
+  .section-pets-slider-cards {
+    column-gap: 40px;
+  }
+}
 .section-pets-slider-card {
   text-align: center;
   background: #FAFAFA;
@@ -330,6 +396,15 @@ header {
   transition: 0.3s;
 }
 
+@media (max-width: 1240px) {
+  .section-pets-slider-cards {
+    flex-wrap: wrap;
+  }
+
+  .section-pets-slider-card:last-child {
+    display: none;
+  }
+}
 .section-pets-slider-card img {
   border-radius: 9px;
 }
@@ -383,6 +458,17 @@ header {
   align-items: center;
 }
 
+@media (max-width: 1024px) {
+  .section-help-items {
+    column-gap: 60px;
+    row-gap: 53px;
+  }
+
+  .help-item-name {
+    width: 170px;
+    text-align: center;
+  }
+}
 .help-item-icon {
   width: 60px;
   height: 60px;
@@ -411,6 +497,14 @@ header {
   row-gap: 60px;
 }
 
+@media (max-width: 995px) {
+  .section-donation {
+    padding: 80px 0 100px 0;
+    flex-direction: column-reverse;
+    align-items: center;
+    row-gap: 30px;
+  }
+}
 .section-donation-img {
   margin-top: 10px;
   height: 261px;
@@ -484,12 +578,33 @@ header {
   background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 }
 
+@media (max-width: 850px) {
+  .footer-container {
+    padding-top: 0;
+  }
+}
 .footer-contacts {
   padding-top: 16px;
   display: flex;
   gap: 160px;
 }
 
+@media (max-width: 1200px) {
+  .footer-contacts {
+    flex: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 950px) {
+  .footer-contacts {
+    gap: 60px;
+  }
+}
+@media (max-width: 850px) {
+  .footer-contacts {
+    padding-top: 30px;
+  }
+}
 .footer-contacts > div {
   display: flex;
   flex-direction: column;
@@ -524,7 +639,7 @@ header {
 
 .contacts a {
   display: inline-block;
-  max-width: 280px;
+  max-width: 260px;
   font-family: "Georgia";
   font-weight: 400;
   font-size: 20px;
@@ -542,6 +657,11 @@ header {
   padding-bottom: 60px;
 }
 
+@media (max-width: 1200px) {
+  .contacts:last-child {
+    padding-bottom: 65px;
+  }
+}
 .footer-img {
   margin-left: auto;
   height: 310px;
@@ -549,6 +669,12 @@ header {
   background: url("../../assets/images/footer-puppy.png");
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+@media (max-width: 1200px) {
+  .footer-img {
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

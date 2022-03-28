@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "style": "sass --watch shelter/pages/pets/sass/style.scss shelter/pages/pets/style.css"
+    "style": "sass --watch shelter/pages/main/sass/style.scss shelter/pages/main/style.css"
   },
   "repository": {
     "type": "git",
