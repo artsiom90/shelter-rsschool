@@ -31,6 +31,7 @@ a:hover,
 a:focus,
 a:active {
   text-decoration: none;
+  color: inherit;
 }
 
 ul,
@@ -73,6 +74,7 @@ header {
 }
 
 .btn-fill {
+  display: inline-block;
   padding: 15px 45px;
   background: #F1CDB3;
   border-radius: 100px;
@@ -91,6 +93,7 @@ header {
 }
 
 .button-transparent {
+  display: inline-block;
   padding: 13px 43px;
   border: 2px solid #F1CDB3;
   border-radius: 100px;
@@ -152,13 +155,13 @@ header {
 }
 
 .logo-subtitle {
-  width: 180px;
+  width: 185px;
   font-family: "Arial";
   font-weight: 400;
   font-size: 13px;
   line-height: 15px;
   text-align: right;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.3px;
   color: #FFFFFF;
 }
 
@@ -344,7 +347,7 @@ header {
   font-weight: 400;
   font-size: 20px;
   line-height: 23px;
-  letter-spacing: 1.1px;
+  letter-spacing: 1px;
   color: #545454;
 }
 
@@ -476,6 +479,7 @@ header {
 .footer-container {
   padding-top: 40px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 }
@@ -483,8 +487,6 @@ header {
 .footer-contacts {
   padding-top: 16px;
   display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
   gap: 160px;
 }
 
@@ -499,11 +501,10 @@ header {
 
 .footer-contacts-right {
   row-gap: 32px;
-  flex-grow: 1;
 }
 
 .footer-title {
-  max-width: 280px;
+  width: 280px;
   font-family: "Georgia";
   font-weight: 400;
   font-size: 35px;
@@ -521,7 +522,7 @@ header {
   column-gap: 20px;
 }
 
-.contacts span {
+.contacts a {
   display: inline-block;
   max-width: 280px;
   font-family: "Georgia";
@@ -532,11 +533,17 @@ header {
   color: #F1CDB3;
 }
 
+.contacts a:hover {
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
 .contacts:last-child {
   padding-bottom: 60px;
 }
 
 .footer-img {
+  margin-left: auto;
   height: 310px;
   width: 300px;
   background: url("../../assets/images/footer-puppy.png");

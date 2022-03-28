@@ -23,6 +23,7 @@ a:hover,
 a:focus,
 a:active {
     text-decoration: none;
+    color: inherit;
 }
 
 ul,
@@ -66,6 +67,7 @@ header {
 }
 
 .btn-fill {
+    display: inline-block;
     padding: 15px 45px;
     background: #F1CDB3;
     border-radius: 100px;
@@ -84,6 +86,7 @@ header {
 }
 
 .button-transparent {
+    display: inline-block;
     padding: 13px 43px;
     border: 2px solid #F1CDB3;
     border-radius: 100px;

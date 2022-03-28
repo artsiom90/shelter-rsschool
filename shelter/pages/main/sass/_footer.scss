@@ -44,7 +44,7 @@
     column-gap: 20px;
 }
 
-.contacts span {
+.contacts a {
     display: inline-block;
     max-width: 280px;
     font-family: 'Georgia';
@@ -53,6 +53,11 @@
     line-height: 115%;
     letter-spacing: 1.2px;
     color: #F1CDB3;
+}
+
+.contacts a:hover {
+    text-decoration: underline;
+    transition: 0.3s;
 }
 
 .contacts:last-child {
