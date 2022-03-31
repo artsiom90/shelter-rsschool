@@ -52,6 +52,11 @@ h6 {
     padding: 0 40px;
 }
 
+@media(max-width: 870px) {
+    .container {
+        padding: 0 30px;
+    }
+}
 
 header {
     position: fixed;

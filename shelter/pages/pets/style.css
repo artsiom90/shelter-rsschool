@@ -60,6 +60,11 @@ h6 {
   padding: 0 40px;
 }
 
+@media (max-width: 870px) {
+  .container {
+    padding: 0 30px;
+  }
+}
 header {
   position: fixed;
   width: 100%;
@@ -225,6 +230,11 @@ header {
   align-items: center;
 }
 
+@media (max-width: 870px) {
+  .section-pets-pets {
+    padding-bottom: 76px;
+  }
+}
 .section-pets-title {
   margin-bottom: 60px;
   max-width: 420px;
@@ -237,6 +247,11 @@ header {
   color: #545454;
 }
 
+@media (max-width: 870px) {
+  .section-pets-title {
+    margin-bottom: 30px;
+  }
+}
 .section-pets-cards-list {
   margin-bottom: 60px;
   display: flex;
@@ -246,6 +261,11 @@ header {
   row-gap: 30px;
 }
 
+@media (max-width: 870px) {
+  .section-pets-cards-list {
+    margin-bottom: 40px;
+  }
+}
 .section-pets-slider-card {
   text-align: center;
   background: #FAFAFA;
@@ -265,6 +285,12 @@ header {
   margin-bottom: 30px;
 }
 
+@media (max-width: 870px) {
+  .section-pets-slider-card:nth-child(7),
+.section-pets-slider-card:nth-child(8) {
+    display: none;
+  }
+}
 .slider-card-name {
   font-family: "Georgia";
   font-weight: 400;
@@ -287,12 +313,33 @@ header {
   background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 }
 
+@media (max-width: 850px) {
+  .footer-container {
+    padding-top: 0;
+  }
+}
 .footer-contacts {
   padding-top: 16px;
   display: flex;
   gap: 160px;
 }
 
+@media (max-width: 1200px) {
+  .footer-contacts {
+    flex: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 950px) {
+  .footer-contacts {
+    gap: 60px;
+  }
+}
+@media (max-width: 850px) {
+  .footer-contacts {
+    padding-top: 30px;
+  }
+}
 .footer-contacts > div {
   display: flex;
   flex-direction: column;
@@ -327,7 +374,7 @@ header {
 
 .contacts a {
   display: inline-block;
-  max-width: 280px;
+  max-width: 260px;
   font-family: "Georgia";
   font-weight: 400;
   font-size: 20px;
@@ -345,6 +392,11 @@ header {
   padding-bottom: 60px;
 }
 
+@media (max-width: 1200px) {
+  .contacts:last-child {
+    padding-bottom: 65px;
+  }
+}
 .footer-img {
   margin-left: auto;
   height: 310px;
@@ -352,6 +404,12 @@ header {
   background: url("../../assets/images/footer-puppy.png");
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+@media (max-width: 1200px) {
+  .footer-img {
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
