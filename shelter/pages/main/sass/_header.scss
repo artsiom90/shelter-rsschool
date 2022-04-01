@@ -52,6 +52,12 @@
     }
 }
 
+@media(max-width:710px) {
+    .header-navbar {
+        display: none;
+    }
+}
+
 .navbar-list {
     display: flex;
     flex-wrap: wrap;

@@ -18,6 +18,12 @@
     gap: 160px;
 }
 
+.footer-contacts>div {
+    display: flex;
+    flex-direction: column;
+
+}
+
 @media (max-width: 1200px) {
     .footer-contacts {
         flex: 100%;
@@ -37,10 +43,13 @@
     }
 }
 
-.footer-contacts>div {
-    display: flex;
-    flex-direction: column;
-
+@media (max-width: 710px) {
+    .footer-contacts {
+        margin-bottom: 40px;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
 }
 
 .footer-contacts-left {
@@ -51,17 +60,34 @@
     row-gap: 32px;
 }
 
+@media(max-width: 480px) {
+
+    .footer-contacts-left {
+        align-items: center;
+    }
+
+    .footer-contacts-right {
+        row-gap: 40px;
+    }
+}
+
 .footer-title {
     width: 280px;
     font-family: 'Georgia';
     font-weight: 400;
     font-size: 35px;
     line-height: 130%;
+    letter-spacing: 2px;
     color: #FFFFFF;
 }
 
-.footer-title:nth-child(1) {
-    letter-spacing: 2px;
+@media(max-width: 480px) {
+    .footer-title {
+        font-size: 25px;
+        align-self: center;
+        text-align: center;
+        letter-spacing: 1.5px;
+    }
 }
 
 .contacts {
@@ -96,6 +122,12 @@
     }
 }
 
+@media (max-width: 710px) {
+    .contacts:last-child {
+        padding-bottom: 0px;
+    }
+}
+
 .footer-img {
     margin-left: auto;
     height: 310px;
@@ -108,5 +140,12 @@
 @media (max-width: 1200px) {
     .footer-img {
         margin: auto;
+    }
+}
+
+@media(max-width: 480px) {
+    .footer-img {
+        height: 270px;
+        width: 260px;
     }
 }
