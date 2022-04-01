@@ -17,7 +17,7 @@
 }
 
 .section-hero-info {
-    padding-bottom: 105px;
+    padding-bottom: 100px;
 }
 
 .section-hero-info>*:not(:last-child) {
@@ -26,6 +26,7 @@
 
 @media(max-width:480px) {
     .section-hero-info {
+        padding-bottom: 105px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -73,6 +74,18 @@
     font-size: 15px;
     line-height: 160%;
     color: #CDCDCD;
+}
+
+@media(max-width:480px) {
+    .section-hero-desc {
+        padding: 0 30px;
+    }
+}
+
+@media(max-width:340px) {
+    .section-hero-desc {
+        padding: 0;
+    }
 }
 
 .section-hero-img {
