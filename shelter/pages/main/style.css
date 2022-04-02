@@ -415,9 +415,6 @@ header {
   margin-left: auto;
   height: 728px;
   width: 698px;
-  background: url("../../assets/images/start-screen-puppy.png");
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 @media (max-width: 1024px) {
@@ -456,9 +453,6 @@ header {
 .section-about-img {
   height: 408px;
   width: 300px;
-  background: url("../../assets/images/about-pets.png");
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 @media (max-width: 480px) {
@@ -772,9 +766,6 @@ header {
   margin-top: 10px;
   height: 261px;
   width: 505px;
-  background: url("../../assets/images/donation-dog.png");
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 @media (max-width: 630px) {
@@ -1000,9 +991,6 @@ header {
   margin-left: auto;
   height: 310px;
   width: 300px;
-  background: url("../../assets/images/footer-puppy.png");
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 @media (max-width: 1200px) {
