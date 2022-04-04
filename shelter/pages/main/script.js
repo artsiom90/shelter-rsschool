@@ -34,16 +34,17 @@ const btnPrev = document.querySelectorAll('.button-prev')
 
 const cards = petsData.map(card => {
     const template = `
-    <div class="section-pets-slider-card">
+    <div id=${card.id} class="section-pets-slider-card">
         <img src=${card.img} alt="img">
-            <div class="slider-card-name">${card.name}</div>
-        <button class="button-transparent">Learn more</button>
+        <div class="slider-card-name">${card.name}</div>
+        <button class="button-transparent btn-transparent-hover">Learn more</button>
+        <div style="height: 30px;"></div>
     </div>
     `
     return template
 })
 
-const prevCardsIndices = [0, 1, 2]
+const prevCardsIndices = []
 
 const getUniqueRandomIndices = arraySize => {
     let randomIndices = Array.apply(null, Array(arraySize))
@@ -62,9 +63,7 @@ const changeSlides = () => {
     if (sliderCards.length === 1) indices.push(...getUniqueRandomIndices(1))
 
     sliderCardsSection.innerHTML = ''
-    indices.forEach(index => {
-        sliderCardsSection.innerHTML += cards[index]
-    })
+    indices.forEach(index => sliderCardsSection.innerHTML += cards[index])
     prevCardsIndices.length = 0
     prevCardsIndices.push(...indices)
 }
@@ -72,3 +71,58 @@ const changeSlides = () => {
 btnNext.forEach(btn => btn.onclick = () => changeSlides())
 
 btnPrev.forEach(btn => btn.onclick = () => changeSlides())
+
+//modal
+const modalWindow = document.querySelector('.modal-container')
+const modal = document.querySelector('.modal')
+const modalInfo = document.querySelector('.modal-info')
+const closeModalWindowBtn = document.querySelector('.button-close')
+const petsSlider = document.querySelector('.section-pets-slider')
+
+petsSlider.addEventListener('click', e => {
+    if (e.target.parentNode.classList.contains('section-pets-slider-card')) {
+        console.log(e.target);
+        const itemId = e.target.parentNode.id
+        modalWindow.style.display = 'flex'
+        document.body.style.overflow = 'hidden'
+        petsData.map(item => {
+            if (itemId === item.id) {
+                modalInfo.innerHTML = ''
+                const template = `
+                           <div class="modal-info-name">
+                               <h2 class="modal-info-title">${item.name}</h2>
+                               <h3 class="modal-info-subtitle">${item.type} - ${item.breed}</h3>
+                           </div>
+                           <p class="modal-info-desc">${item.description}</p>
+                           <ul class="modal-info-additional">
+                               <li><b>Age: </b>${item.age}</li>
+                               <li><b>Inoculations: </b>${item.inoculations}</li>
+                               <li><b>Diseases: </b>${item.diseases}</li>
+                               <li><b>Parasites: </b>${item.parasites}</li>
+                           </ul>
+                       `
+                modalInfo.innerHTML = template
+                document.querySelector('.modal-img').style.backgroundImage = `url('${item.img}')`
+                modal.onclick = e => e.stopPropagation()
+            }
+        })
+    }
+})
+
+modalWindow.addEventListener('mouseover', e => {
+    if (e.target.classList.contains('modal-container')) {
+        closeModalWindowBtn.classList.add('btn-close-hover')
+    } else {
+        closeModalWindowBtn.classList.remove('btn-close-hover')
+    }
+})
+
+closeModalWindowBtn.onclick = () => {
+    modalWindow.style.display = 'none'
+    document.body.style.overflow = 'visible'
+}
+
+modalWindow.onclick = () => {
+    modalWindow.style.display = 'none'
+    document.body.style.overflow = 'visible'
+}

@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "name": "Katrine",
         "img": "../../assets/images/pets-katrine.jpg",
         "type": "Cat",
@@ -17,6 +18,7 @@
         ]
     },
     {
+        "id": "2",
         "name": "Jennifer",
         "img": "../../assets/images/pets-jennifer.jpg",
         "type": "Dog",
@@ -34,6 +36,7 @@
         ]
     },
     {
+        "id": "3",
         "name": "Woody",
         "img": "../../assets/images/pets-woody.jpg",
         "type": "Dog",
@@ -52,6 +55,7 @@
         ]
     },
     {
+        "id": "4",
         "name": "Sophia",
         "img": "../../assets/images/pets-sophia.jpg",
         "type": "Dog",
@@ -69,6 +73,7 @@
         ]
     },
     {
+        "id": "5",
         "name": "Timmy",
         "img": "../../assets/images/pets-timmy.jpg",
         "type": "Cat",
@@ -87,6 +92,7 @@
         ]
     },
     {
+        "id": "6",
         "name": "Charly",
         "img": "../../assets/images/pets-charly.jpg",
         "type": "Dog",
@@ -107,6 +113,7 @@
         ]
     },
     {
+        "id": "7",
         "name": "Scarlett",
         "img": "../../assets/images/pets-scarlett.jpg",
         "type": "Dog",
@@ -124,6 +131,7 @@
         ]
     },
     {
+        "id": "8",
         "name": "Freddie",
         "img": "../../assets/images/pets-freddie.jpg",
         "type": "Cat",

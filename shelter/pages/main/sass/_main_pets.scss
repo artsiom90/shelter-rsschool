@@ -1,5 +1,4 @@
 .pets-container {
-    position: relative;
     background: #F6F6F6;
 }
 
@@ -81,7 +80,7 @@
     cursor: pointer;
 }
 
-.section-pets-slider-card:hover .btn-hover {
+.section-pets-slider-card:hover .btn-transparent-hover {
     border: 2px solid #FDDCC4;
     background: #FDDCC4;
     transition: 0.3s;
@@ -111,8 +110,9 @@
     background: #FFFFFF;
 }
 
-.section-pets-slider-card>* {
-    margin-bottom: 30px;
+.section-pets-slider-card img,
+.section-pets-slider-card div {
+    padding-bottom: 30px;
 }
 
 .slider-card-name {
@@ -142,10 +142,7 @@
 }
 
 .modal-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -154,14 +151,37 @@
     background: rgba(41, 41, 41, 0.6);
 }
 
+.btn-close-hover {
+    border: 2px solid #FDDCC4;
+    background: #FDDCC4;
+    transition: 0.3s;
+}
+
 .modal {
     display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    max-width: 900px;
-    max-height: 500px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 500px;
     border-radius: 9px;
     background: #FAFAFA;
+}
+
+@media(max-width: 1020px) {
+    .modal {
+        width: 630px;
+        height: 350px;
+    }
+}
+
+@media(max-width: 750px) {
+    .modal {
+        justify-content: center;
+        width: 240px;
+        height: 340px;
+    }
 }
 
 .modal-img {
@@ -174,13 +194,44 @@
     border-radius: 9px 0px 0px 9px;
 }
 
+@media(max-width: 1020px) {
+    .modal-img {
+        flex-basis: 350px;
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media(max-width: 750px) {
+    .modal-img {
+        display: none;
+    }
+}
+
 .modal-info {
-    margin-top: 50px;
-    padding: 0 20px 0 0;
     flex-basis: 400px;
+    margin-top: 50px;
+    padding-left: 30px;
+    padding-right: 20px;
     display: flex;
     flex-direction: column;
     row-gap: 40px;
+}
+
+@media(max-width: 1020px) {
+    .modal-info {
+        flex-basis: 280px;
+        margin-top: 10px;
+        padding-left: 11px;
+        padding-right: 9px;
+        row-gap: 20px;
+    }
+}
+
+@media(max-width: 750px) {
+    .modal-info-name {
+        text-align: center;
+    }
 }
 
 .modal-info-title {
@@ -188,32 +239,56 @@
     font-family: 'Georgia';
     font-size: 35px;
     line-height: 130%;
-    letter-spacing: 1.5px;
+    letter-spacing: 2.4px;
 }
 
 .modal-info-subtitle {
     font-family: 'Georgia';
     font-size: 20px;
     line-height: 115%;
-
+    letter-spacing: 1.2px;
 }
 
 .modal-info-desc {
     font-family: 'Georgia';
     font-size: 15px;
-    line-height: 110%;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.9px;
+}
+
+@media(max-width: 1020px) {
+    .modal-info-desc {
+        font-size: 13px;
+        line-height: 110%;
+        letter-spacing: 0.75px;
+    }
+}
+
+@media(max-width: 750px) {
+    .modal-info-desc {
+        text-align: justify;
+    }
+}
+
+@media(max-width: 750px) {
+    .modal-info-name {
+        text-align: center;
+    }
 }
 
 .modal-info-additional {
     font-family: 'Georgia';
     font-size: 15px;
-    line-height: 110%;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.9px;
 }
 
 .modal-info-additional>li {
     margin-bottom: 11px;
+}
+
+@media(max-width: 1020px) {
+    .modal-info-additional>li {
+        margin-bottom: 6px;
+    }
 }
 
 .modal-info-additional>li::before {
