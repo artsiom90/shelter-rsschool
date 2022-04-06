@@ -41,16 +41,144 @@ navbarLinks.forEach(link => link.addEventListener('click', e => {
 //pets
 const petsCardsList = document.querySelector('.section-pets-cards-list')
 
-petsData.forEach(card => {
-    const template = `
-    <div class="section-pets-slider-card">
-        <img src=${card.img} alt="img">
-            <div class="slider-card-name">${card.name}</div>
-        <button class="button-transparent btn-transparent-hover">Learn more</button>
-    </div>
+if (window.innerWidth > 870) getInitData(8)
+if (window.innerWidth <= 870) getInitData(6)
+if (window.innerWidth <= 480) getInitData(3)
+
+window.onresize = () => {
+    if (window.innerWidth > 870) getInitData(8)
+    if (window.innerWidth <= 870) getInitData(6)
+    if (window.innerWidth <= 480) getInitData(3)
+}
+
+function getInitData(number) {
+    petsCardsList.innerHTML = ''
+    for (let i = 0; i < petsData.length; i++) {
+        const template = `
+        <div class="section-pets-slider-card">
+            <img src=${petsData[i].img} alt="img">
+                <div class="slider-card-name">${petsData[i].name}</div>
+            <button class="button-transparent btn-transparent-hover">Learn more</button>
+        </div>
     `
-    petsCardsList.innerHTML += template
-})
+        petsCardsList.innerHTML += template
+        if (i === number - 1) break
+    }
+}
+
+//pagination
+const prevBtn = document.querySelector('.btn-prev')
+const nextBtn = document.querySelector('.btn-next')
+const startBtn = document.querySelector('.btn-start')
+const endBtn = document.querySelector('.btn-end')
+const pageNumber = document.querySelector('.page-number')
+
+const petsDataArray = [...petsData]
+
+const shuffleArray = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]
+    }
+    return array
+}
+
+for (let i = 0; i < 5; i++) {
+    petsDataArray.push(...shuffleArray(petsData))
+}
+
+const dataArray = petsDataArray.reduce((arr, item, i) => {
+    arr.push({ ...item, id: i + 1 })
+    return arr
+}, [])
+
+
+let currentPage = 1
+let perPage = petsCardsList.childElementCount
+let totalPages = () => dataArray.length / petsCardsList.childElementCount
+
+function prevPage() {
+    if (currentPage > 1) currentPage--
+    changePage(currentPage)
+}
+
+const nextPage = () => {
+    if (currentPage < totalPages()) currentPage++
+    changePage(currentPage)
+}
+
+const disableBtn = () => {
+    if (currentPage === 1) {
+        document.querySelectorAll('.left-arrow-btn').forEach(btn => {
+            btn.classList.add('disabled')
+            document.querySelector('.left-arrows-img').src = "../../assets/icons/left-arrows-disabled.svg"
+            document.querySelector('.left-arrow-img').src = "../../assets/icons/left-arrow-disabled.svg"
+        })
+        document.querySelectorAll('.right-arrow-btn').forEach(btn => {
+            btn.classList.remove('disabled')
+            document.querySelector('.right-arrows-img').src = "../../assets/icons/right-arrows.svg"
+            document.querySelector('.right-arrow-img').src = "../../assets/icons/right-arrow.svg"
+        })
+    } else {
+        document.querySelectorAll('.left-arrow-btn').forEach(btn => {
+            btn.classList.remove('disabled')
+            document.querySelector('.left-arrows-img').src = "../../assets/icons/left-arrows.svg"
+            document.querySelector('.left-arrow-img').src = "../../assets/icons/left-arrow.svg"
+        })
+    }
+    if (currentPage === totalPages()) {
+        document.querySelectorAll('.right-arrow-btn').forEach(btn => {
+            btn.classList.add('disabled')
+            document.querySelector('.right-arrows-img').src = "../../assets/icons/right-arrows-disabled.svg"
+            document.querySelector('.right-arrow-img').src = "../../assets/icons/right-arrow-disabled.svg"
+        })
+        document.querySelectorAll('.left-arrow-btn').forEach(btn => {
+            btn.classList.remove('disabled')
+            document.querySelector('.left-arrows-img').src = "../../assets/icons/left-arrows.svg"
+            document.querySelector('.left-arrow-img').src = "../../assets/icons/left-arrow.svg"
+        })
+    } else {
+        document.querySelectorAll('.right-arrow-btn').forEach(btn => {
+            btn.classList.remove('disabled')
+            document.querySelector('.right-arrows-img').src = "../../assets/icons/right-arrows.svg"
+            document.querySelector('.right-arrow-img').src = "../../assets/icons/right-arrow.svg"
+        })
+    }
+}
+
+disableBtn()
+
+function changePage(page) {
+    if (page < 1) page = 1
+    if (page > totalPages()) page = totalPages()
+
+    petsCardsList.innerHTML = ''
+    pageNumber.innerHTML = page
+
+    for (let i = (page - 1) * perPage; i < (page * perPage) && dataArray.length; i++) {
+        const template = `
+            <div class="section-pets-slider-card">
+                <img src=${dataArray[i].img} alt="img">
+                    <div class="slider-card-name">${dataArray[i].name}</div>
+                <button class="button-transparent btn-transparent-hover">Learn more</button>
+            </div>
+            `
+        petsCardsList.innerHTML += template
+    }
+
+    disableBtn()
+}
+
+prevBtn.onclick = () => prevPage()
+nextBtn.onclick = () => nextPage()
+startBtn.onclick = () => {
+    currentPage = 1
+    changePage(1)
+}
+endBtn.onclick = () => {
+    currentPage = totalPages()
+    changePage(totalPages())
+}
 
 //modal
 const modalWindow = document.querySelector('.modal-container')

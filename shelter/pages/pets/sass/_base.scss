@@ -133,28 +133,6 @@ header {
     border: 2px solid #CDCDCD;
 }
 
-.page-number-btn {
-    padding-bottom: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 52px;
-    width: 52px;
-    font-family: 'Georgia';
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 115%;
-    color: #292929;
-    background: #F1CDB3;
-    border-radius: 100px;
-    cursor: pointer;
-}
-
-.page-number-btn:hover {
-    background: #FDDCC4;
-    transition: 0.3s;
-}
-
 .button-close {
     display: flex;
     justify-content: center;
