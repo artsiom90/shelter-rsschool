@@ -186,7 +186,7 @@ header {
   display: none;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-navbar-logo {
     padding: 30px 0 0 10px;
     display: flex;
@@ -205,7 +205,7 @@ header {
     margin-top: 46px;
   }
 }
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-navbar {
     margin-top: 0;
     position: fixed;
@@ -231,7 +231,7 @@ header {
   column-gap: 36px;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .navbar-list {
     padding-top: 158px;
     flex-direction: column;
@@ -252,7 +252,7 @@ header {
   color: #CDCDCD;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .navbar-item > a {
     font-size: 32px;
   }
@@ -272,7 +272,7 @@ header {
   border-bottom: 3px solid #F1CDB3;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .navbar-item-active > a {
     padding-bottom: 7px;
     font-size: 32px;
@@ -286,7 +286,7 @@ header {
   height: 22px;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-burger {
     display: block;
   }
@@ -295,7 +295,7 @@ header {
   display: none;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-burger-close {
     position: absolute;
     top: 0;
@@ -594,7 +594,7 @@ header {
   cursor: pointer;
 }
 
-.section-pets-slider-card:hover .btn-hover {
+.section-pets-slider-card:hover .btn-transparent-hover {
   border: 2px solid #FDDCC4;
   background: #FDDCC4;
   transition: 0.3s;
@@ -847,6 +847,16 @@ header {
   max-width: 349px;
   background: #F1CDB3;
   border-radius: 9px;
+}
+
+.section-donation-payment:hover {
+  background: #FDDCC4;
+  transition: 0.3s;
+}
+
+.section-donation-payment:hover .credit-card-data-form input {
+  background: #FDDCC4;
+  transition: 0.3s;
 }
 
 .credit-card-data-form input {

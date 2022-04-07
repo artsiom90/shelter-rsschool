@@ -105,6 +105,17 @@
     max-width: 349px;
     background: #F1CDB3;
     border-radius: 9px;
+
+}
+
+.section-donation-payment:hover {
+    background: #FDDCC4;
+    transition: 0.3s;
+}
+
+.section-donation-payment:hover .credit-card-data-form input {
+    background: #FDDCC4;
+    transition: 0.3s;
 }
 
 .credit-card-data-form input {

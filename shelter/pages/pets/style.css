@@ -160,6 +160,11 @@ header {
   transition: 0.3s;
 }
 
+@media (max-width: 480px) {
+  .page-number-btn {
+    padding-bottom: 0;
+  }
+}
 .header-container-pets {
   display: flex;
   flex-wrap: wrap;
@@ -174,7 +179,7 @@ header {
 
 @media (max-width: 850px) {
   .header-logo-pets {
-    margin: 30px 15px 0 0;
+    margin: 30px 15px 30px 0;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -205,7 +210,7 @@ header {
   display: none;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-navbar-pets-logo {
     padding: 30px 0 0 10px;
     display: flex;
@@ -224,7 +229,7 @@ header {
     margin-top: 46px;
   }
 }
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-navbar-pets {
     margin-top: 0;
     position: fixed;
@@ -250,7 +255,7 @@ header {
   column-gap: 36px;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .navbar-list-pets {
     padding-top: 158px;
     flex-direction: column;
@@ -271,7 +276,7 @@ header {
   color: #545454;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .navbar-item-link {
     font-size: 32px;
   }
@@ -291,7 +296,7 @@ header {
   border-bottom: 3px solid #F1CDB3;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .navbar-item-link-active {
     padding-bottom: 7px;
     font-size: 32px;
@@ -305,7 +310,7 @@ header {
   height: 22px;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-burger-pets {
     display: block;
   }
@@ -314,7 +319,7 @@ header {
   display: none;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-burger-pets-close {
     position: absolute;
     top: 0;
@@ -418,7 +423,7 @@ header {
   cursor: pointer;
 }
 
-.section-pets-slider-card:hover .btn-hover {
+.section-pets-slider-card:hover .btn-transparent-hover {
   border: 2px solid #FDDCC4;
   background: #FDDCC4;
   transition: 0.3s;

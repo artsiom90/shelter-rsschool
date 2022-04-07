@@ -153,3 +153,9 @@ header {
     background: #FDDCC4;
     transition: 0.3s;
 }
+
+@media(max-width: 480px) {
+    .page-number-btn {
+        padding-bottom: 0;
+    }
+}
