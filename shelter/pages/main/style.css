@@ -214,7 +214,7 @@ header {
   display: none;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-navbar-logo {
     padding: 30px 0 0 10px;
     display: flex;
@@ -233,7 +233,7 @@ header {
     margin-top: 46px;
   }
 }
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-navbar {
     margin-top: 0;
     position: fixed;
@@ -259,7 +259,7 @@ header {
   column-gap: 36px;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .navbar-list {
     padding-top: 158px;
     flex-direction: column;
@@ -280,7 +280,7 @@ header {
   color: #CDCDCD;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .navbar-item > a {
     font-size: 32px;
   }
@@ -300,7 +300,7 @@ header {
   border-bottom: 3px solid #F1CDB3;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .navbar-item-active > a {
     padding-bottom: 7px;
     font-size: 32px;
@@ -314,7 +314,7 @@ header {
   height: 22px;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-burger {
     display: block;
   }
@@ -323,7 +323,7 @@ header {
   display: none;
 }
 
-@media (max-width: 710px) {
+@media (max-width: 767px) {
   .header-burger-close {
     position: absolute;
     top: 0;
@@ -637,7 +637,7 @@ header {
     display: none;
   }
 }
-@media (max-width: 630px) {
+@media (max-width: 767px) {
   .section-pets-slider-card:nth-child(2) {
     display: none;
   }
@@ -703,7 +703,7 @@ header {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 900px;
-  height: 500px;
+  min-height: 500px;
   border-radius: 9px;
   background: #FAFAFA;
 }
@@ -711,14 +711,14 @@ header {
 @media (max-width: 1020px) {
   .modal {
     width: 630px;
-    height: 350px;
+    min-height: 350px;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   .modal {
     justify-content: center;
     width: 240px;
-    height: 340px;
+    min-height: 340px;
   }
 }
 .modal-img {
@@ -738,7 +738,7 @@ header {
     width: 350px;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   .modal-img {
     display: none;
   }
@@ -762,7 +762,7 @@ header {
     row-gap: 20px;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   .modal-info-name {
     text-align: center;
   }
@@ -795,12 +795,12 @@ header {
     letter-spacing: 0.75px;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   .modal-info-desc {
     text-align: justify;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 767px) {
   .modal-info-name {
     text-align: center;
   }
@@ -1025,6 +1025,16 @@ header {
   max-width: 349px;
   background: #F1CDB3;
   border-radius: 9px;
+}
+
+.section-donation-payment:hover {
+  background: #FDDCC4;
+  transition: 0.3s;
+}
+
+.section-donation-payment:hover .credit-card-data-form input {
+  background: #FDDCC4;
+  transition: 0.3s;
 }
 
 .credit-card-data-form input {

@@ -96,7 +96,7 @@
     }
 }
 
-@media(max-width: 630px) {
+@media(max-width: 767px) {
     .section-pets-slider-card:nth-child(2) {
         display: none;
     }
@@ -164,7 +164,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 900px;
-    height: 500px;
+    min-height: 500px;
     border-radius: 9px;
     background: #FAFAFA;
 }
@@ -172,15 +172,15 @@
 @media(max-width: 1020px) {
     .modal {
         width: 630px;
-        height: 350px;
+        min-height: 350px;
     }
 }
 
-@media(max-width: 750px) {
+@media(max-width: 767px) {
     .modal {
         justify-content: center;
         width: 240px;
-        height: 340px;
+        min-height: 340px;
     }
 }
 
@@ -202,7 +202,7 @@
     }
 }
 
-@media(max-width: 750px) {
+@media(max-width: 767px) {
     .modal-img {
         display: none;
     }
@@ -228,7 +228,7 @@
     }
 }
 
-@media(max-width: 750px) {
+@media(max-width: 767px) {
     .modal-info-name {
         text-align: center;
     }
@@ -263,13 +263,13 @@
     }
 }
 
-@media(max-width: 750px) {
+@media(max-width: 767px) {
     .modal-info-desc {
         text-align: justify;
     }
 }
 
-@media(max-width: 750px) {
+@media(max-width: 767px) {
     .modal-info-name {
         text-align: center;
     }
