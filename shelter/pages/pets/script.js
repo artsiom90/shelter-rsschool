@@ -55,10 +55,11 @@ function getInitData(number) {
     petsCardsList.innerHTML = ''
     for (let i = 0; i < petsData.length; i++) {
         const template = `
-        <div class="section-pets-slider-card">
+        <div id=${petsData[i].id} class="section-pets-slider-card">
             <img src=${petsData[i].img} alt="img">
                 <div class="slider-card-name">${petsData[i].name}</div>
             <button class="button-transparent btn-transparent-hover">Learn more</button>
+            <div style="height: 30px;"></div>
         </div>
     `
         petsCardsList.innerHTML += template
@@ -87,8 +88,8 @@ for (let i = 0; i < 5; i++) {
     petsDataArray.push(...shuffleArray(petsData))
 }
 
-const dataArray = petsDataArray.reduce((arr, item, i) => {
-    arr.push({ ...item, id: i + 1 })
+const dataArray = petsDataArray.reduce((arr, item) => {
+    arr.push({ ...item })
     return arr
 }, [])
 
@@ -157,10 +158,11 @@ function changePage(page) {
 
     for (let i = (page - 1) * perPage; i < (page * perPage) && dataArray.length; i++) {
         const template = `
-            <div class="section-pets-slider-card">
+            <div id=${dataArray[i].id} class="section-pets-slider-card">
                 <img src=${dataArray[i].img} alt="img">
                     <div class="slider-card-name">${dataArray[i].name}</div>
                 <button class="button-transparent btn-transparent-hover">Learn more</button>
+                <div style="height: 30px;"></div>
             </div>
             `
         petsCardsList.innerHTML += template
@@ -185,14 +187,13 @@ const modalWindow = document.querySelector('.modal-container')
 const modal = document.querySelector('.modal')
 const modalInfo = document.querySelector('.modal-info')
 const closeModalWindowBtn = document.querySelector('.button-close')
-const petsCards = document.querySelectorAll('.section-pets-slider-card')
 
-
-petsCards.forEach((card, cardIndex) => card.onclick = () => {
+petsCardsList.addEventListener('click', e => {
+    const itemId = e.target.parentNode.id
     modalWindow.style.display = 'flex'
     document.body.style.overflow = 'hidden'
-    petsData.map((item, itemIndex) => {
-        if (cardIndex === itemIndex) {
+    petsData.map(item => {
+        if (itemId === item.id) {
             modalInfo.innerHTML = ''
             const template = `
                         <div class="modal-info-name">

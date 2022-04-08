@@ -36,7 +36,7 @@ const cards = petsData.map(card => {
     const template = `
     <div id=${card.id} class="section-pets-slider-card">
         <img src=${card.img} alt="img">
-        <div class="slider-card-name">${card.name}</div>
+            <div class="slider-card-name">${card.name}</div>
         <button class="button-transparent btn-transparent-hover">Learn more</button>
         <div style="height: 30px;"></div>
     </div>
@@ -81,7 +81,6 @@ const petsSlider = document.querySelector('.section-pets-slider')
 
 petsSlider.addEventListener('click', e => {
     if (e.target.parentNode.classList.contains('section-pets-slider-card')) {
-        console.log(e.target);
         const itemId = e.target.parentNode.id
         modalWindow.style.display = 'flex'
         document.body.style.overflow = 'hidden'
