@@ -705,11 +705,15 @@ header {
   .section-help-items {
     padding: 0 5px;
     gap: 30px;
-    justify-content: unset;
   }
 
   .help-item-name {
     width: 130px;
+  }
+}
+@media (max-width: 320px) {
+  .section-help-items {
+    justify-content: unset;
   }
 }
 .help-item {
