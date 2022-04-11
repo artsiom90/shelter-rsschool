@@ -622,8 +622,9 @@ header {
   background: #FFFFFF;
 }
 
-.section-pets-slider-card > * {
-  margin-bottom: 30px;
+.section-pets-slider-card img,
+.section-pets-slider-card div {
+  padding-bottom: 30px;
 }
 
 .slider-card-name {
