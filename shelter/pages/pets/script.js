@@ -18,7 +18,7 @@ openMenuBtn.addEventListener('click', () => {
     document.body.style.overflow = 'hidden'
 })
 
-closeMenuBtn.addEventListener('click', () => {
+const closeMenu = () => {
     navbarMenu.classList.remove('navbar-open')
     document.querySelector('.header-logo-pets').style.display = 'flex'
     document.querySelectorAll('.navbar-item-link').forEach(item => {
@@ -28,13 +28,14 @@ closeMenuBtn.addEventListener('click', () => {
         line.style.backgroundColor = 'black'
     })
     document.body.style.overflow = 'visible'
-})
+}
+
+closeMenuBtn.addEventListener('click', () => closeMenu())
 
 navbarLinks.forEach(link => link.addEventListener('click', e => {
     if (e.target.classList.contains('navbar-item-link')
         || e.target.classList.contains('logo-title')) {
-        navbarMenu.classList.remove('navbar-open')
-        document.body.style.overflow = 'visible'
+        closeMenu()
     }
 }))
 
