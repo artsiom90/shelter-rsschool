@@ -127,6 +127,13 @@ header {
     border: 2px solid #F1CDB3;
     border-radius: 100px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.left-arrow-btn:hover:not(.disabled),
+.right-arrow-btn:hover:not(.disabled) {
+    border: 2px solid #FDDCC4;
+    background: #FDDCC4;
 }
 
 .disabled {
