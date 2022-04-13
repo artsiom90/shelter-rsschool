@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "styles": "sass --watch shelter/pages/main/sass/style.scss shelter/pages/main/style.css",
+    "styles": "sass --watch shelter/pages/pets/sass/style.scss shelter/pages/pets/style.css",
     "dev": "webpack",
     "server": "npx webpack serve"
   },
