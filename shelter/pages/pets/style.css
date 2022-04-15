@@ -159,12 +159,6 @@ header {
   color: #292929;
   background: #F1CDB3;
   border-radius: 100px;
-  cursor: pointer;
-}
-
-.page-number-btn:hover {
-  background: #FDDCC4;
-  transition: 0.3s;
 }
 
 @media (max-width: 480px) {
@@ -449,10 +443,12 @@ header {
 
 .section-pets-slider-card:hover {
   background: #FFFFFF;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.section-pets-slider-card > * {
-  margin-bottom: 30px;
+.section-pets-slider-card img,
+.section-pets-slider-card div {
+  padding-bottom: 30px;
 }
 
 @media (max-width: 870px) {
@@ -581,7 +577,7 @@ header {
 }
 
 .contacts a:hover {
-  text-decoration: underline;
+  color: #FDDCC4;
   transition: 0.3s;
 }
 
