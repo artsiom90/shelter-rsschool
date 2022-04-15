@@ -443,6 +443,7 @@ header {
 
 .section-pets-slider-card:hover {
   background: #FFFFFF;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .section-pets-slider-card img,
@@ -484,11 +485,6 @@ header {
   background: #F1CDB3;
   border-radius: 100px;
   cursor: pointer;
-}
-
-.page-number:hover {
-  background: #FDDCC4;
-  transition: 0.3s;
 }
 
 .modal-container {
@@ -741,7 +737,7 @@ header {
 }
 
 .contacts a:hover {
-  text-decoration: underline;
+  color: #FDDCC4;
   transition: 0.3s;
 }
 

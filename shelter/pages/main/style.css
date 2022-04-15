@@ -648,6 +648,7 @@ header {
 
 .section-pets-slider-card:hover {
   background: #FFFFFF;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .section-pets-slider-card img,
@@ -1176,7 +1177,7 @@ header {
 }
 
 .contacts a:hover {
-  text-decoration: underline;
+  color: #FDDCC4;
   transition: 0.3s;
 }
 
