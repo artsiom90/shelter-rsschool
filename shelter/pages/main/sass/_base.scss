@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -134,4 +135,31 @@ header {
     border: 2px solid #FDDCC4;
     background: #FDDCC4;
     transition: 0.3s;
+}
+
+.button-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -42px;
+    top: -52px;
+    height: 52px;
+    width: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.button-close:hover {
+    border: 2px solid #FDDCC4;
+    background: #FDDCC4;
+    transition: 0.3s;
+}
+
+@media(max-width: 750px) {
+    .button-close {
+        right: -30px;
+    }
 }

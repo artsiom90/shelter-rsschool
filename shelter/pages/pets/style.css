@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Arial";
   src: url("../../../assets/fonts/arial.ttf");
@@ -11,6 +12,7 @@ html {
 }
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -145,25 +147,30 @@ header {
   border: 2px solid #CDCDCD;
 }
 
-.page-number-btn {
-  padding-bottom: 3px;
+.button-close {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: -42px;
+  top: -52px;
   height: 52px;
   width: 52px;
-  font-family: "Georgia";
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 115%;
-  color: #292929;
-  background: #F1CDB3;
+  border: 2px solid #F1CDB3;
   border-radius: 100px;
+  background: transparent;
+  cursor: pointer;
 }
 
-@media (max-width: 480px) {
-  .page-number-btn {
-    padding-bottom: 0;
+.button-close:hover {
+  border: 2px solid #FDDCC4;
+  background: #FDDCC4;
+  transition: 0.3s;
+}
+
+@media (max-width: 750px) {
+  .button-close {
+    right: -30px;
   }
 }
 .header-container-pets {
@@ -430,13 +437,6 @@ header {
   transition: 0.3s;
 }
 
-@media (max-width: 480px) {
-  .section-pets-slider-card:nth-child(4),
-.section-pets-slider-card:nth-child(5),
-.section-pets-slider-card:nth-child(6) {
-    display: none;
-  }
-}
 .section-pets-slider-card img {
   border-radius: 9px;
 }
@@ -451,12 +451,6 @@ header {
   padding-bottom: 30px;
 }
 
-@media (max-width: 870px) {
-  .section-pets-slider-card:nth-child(7),
-.section-pets-slider-card:nth-child(8) {
-    display: none;
-  }
-}
 .slider-card-name {
   font-family: "Georgia";
   font-weight: 400;
@@ -476,6 +470,172 @@ header {
     gap: 10px;
   }
 }
+.page-number {
+  padding-bottom: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  width: 52px;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  color: #292929;
+  background: #F1CDB3;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.modal-container {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(41, 41, 41, 0.6);
+}
+
+.btn-close-hover {
+  border: 2px solid #FDDCC4;
+  background: #FDDCC4;
+  transition: 0.3s;
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  min-height: 500px;
+  border-radius: 9px;
+  background: #FAFAFA;
+}
+
+@media (max-width: 1020px) {
+  .modal {
+    width: 630px;
+    min-height: 350px;
+  }
+}
+@media (max-width: 767px) {
+  .modal {
+    justify-content: center;
+    width: 240px;
+    min-height: 340px;
+  }
+}
+.modal-img {
+  flex-basis: 500px;
+  height: 500px;
+  width: 500px;
+  background: url("../../assets/images/pets-jennifer.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 9px 0px 0px 9px;
+}
+
+@media (max-width: 1020px) {
+  .modal-img {
+    flex-basis: 350px;
+    height: 350px;
+    width: 350px;
+  }
+}
+@media (max-width: 767px) {
+  .modal-img {
+    display: none;
+  }
+}
+.modal-info {
+  flex-basis: 400px;
+  margin-top: 50px;
+  padding-left: 30px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+@media (max-width: 1020px) {
+  .modal-info {
+    flex-basis: 280px;
+    margin-top: 10px;
+    padding-left: 11px;
+    padding-right: 9px;
+    row-gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .modal-info-name {
+    text-align: center;
+  }
+}
+.modal-info-title {
+  margin-bottom: 10px;
+  font-family: "Georgia";
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 2.4px;
+}
+
+.modal-info-subtitle {
+  font-family: "Georgia";
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 1.2px;
+}
+
+.modal-info-desc {
+  font-family: "Georgia";
+  font-size: 15px;
+  letter-spacing: 0.9px;
+}
+
+@media (max-width: 1020px) {
+  .modal-info-desc {
+    font-size: 13px;
+    line-height: 110%;
+    letter-spacing: 0.75px;
+  }
+}
+@media (max-width: 767px) {
+  .modal-info-desc {
+    text-align: justify;
+  }
+}
+@media (max-width: 767px) {
+  .modal-info-name {
+    text-align: center;
+  }
+}
+.modal-info-additional {
+  font-family: "Georgia";
+  font-size: 15px;
+  letter-spacing: 0.9px;
+}
+
+.modal-info-additional > li {
+  margin-bottom: 11px;
+}
+
+@media (max-width: 1020px) {
+  .modal-info-additional > li {
+    margin-bottom: 6px;
+  }
+}
+.modal-info-additional > li::before {
+  content: "•";
+  list-style: circle;
+  margin-right: 8px;
+  width: 4px;
+  height: 4px;
+  color: #F1CDB3;
+}
+
 .footer-container {
   padding-top: 40px;
   display: flex;
