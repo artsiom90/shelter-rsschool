@@ -6,23 +6,26 @@ const navbarLinks = document.querySelectorAll('.navbar-list')
 const openMenuBtn = document.querySelector('.header-burger')
 const closeMenuBtn = document.querySelector('.header-burger-close')
 
-openMenuBtn.addEventListener('click', () => {
+const openMenu = () => {
     navbarMenu.classList.add('navbar-open')
     document.querySelector('.header-logo').style.display = 'none'
     document.body.style.overflow = 'hidden'
-})
+}
 
-closeMenuBtn.addEventListener('click', () => {
+const closeMenu = () => {
     navbarMenu.classList.remove('navbar-open')
     document.querySelector('.header-logo').style.display = 'flex'
     document.body.style.overflow = 'visible'
-})
+}
+
+openMenuBtn.addEventListener('click', () => openMenu())
+
+closeMenuBtn.addEventListener('click', () => closeMenu())
 
 navbarLinks.forEach(link => link.addEventListener('click', e => {
     if (e.target.classList.contains('navbar-item-link')
         || e.target.classList.contains('logo-title')) {
-        navbarMenu.classList.remove('navbar-open')
-        document.body.style.overflow = 'visible'
+        closeMenu()
     }
 }))
 
@@ -49,7 +52,8 @@ const prevCardsIndices = []
 const getUniqueRandomIndices = arraySize => {
     let randomIndices = Array.apply(null, Array(arraySize))
         .map(() => Math.floor((Math.random() * (petsData.length)) + 0))
-    const isMatching = prevCardsIndices && prevCardsIndices.some(prevIndex => randomIndices.includes(prevIndex))
+    const isMatching = prevCardsIndices && prevCardsIndices
+        .some(prevIndex => randomIndices.includes(prevIndex))
     if (new Set(randomIndices).size !== randomIndices.length || isMatching) {
         randomIndices = getUniqueRandomIndices(arraySize)
     }
@@ -79,7 +83,7 @@ const modalInfo = document.querySelector('.modal-info')
 const closeModalWindowBtn = document.querySelector('.button-close')
 const petsSlider = document.querySelector('.section-pets-slider')
 
-petsSlider.addEventListener('click', e => {
+const openModal = e => {
     if (e.target.parentNode.classList.contains('section-pets-slider-card')) {
         const itemId = e.target.parentNode.id
         modalWindow.style.display = 'flex'
@@ -106,7 +110,14 @@ petsSlider.addEventListener('click', e => {
             }
         })
     }
-})
+}
+
+const closeModal = () => {
+    modalWindow.style.display = 'none'
+    document.body.style.overflow = 'visible'
+}
+
+petsSlider.addEventListener('click', e => openModal(e))
 
 modalWindow.addEventListener('mouseover', e => {
     if (e.target.classList.contains('modal-container')) {
@@ -116,12 +127,6 @@ modalWindow.addEventListener('mouseover', e => {
     }
 })
 
-closeModalWindowBtn.onclick = () => {
-    modalWindow.style.display = 'none'
-    document.body.style.overflow = 'visible'
-}
+closeModalWindowBtn.onclick = () => closeModal()
 
-modalWindow.onclick = () => {
-    modalWindow.style.display = 'none'
-    document.body.style.overflow = 'visible'
-}
+modalWindow.onclick = () => closeModal()

@@ -6,7 +6,7 @@ const navbarLinks = document.querySelectorAll('.navbar-list-pets')
 const openMenuBtn = document.querySelector('.header-burger-pets')
 const closeMenuBtn = document.querySelector('.header-burger-pets-close')
 
-openMenuBtn.addEventListener('click', () => {
+const openMenu = () => {
     navbarMenu.classList.add('navbar-open')
     document.querySelector('.header-logo-pets').style.display = 'none'
     document.querySelectorAll('.navbar-item-link').forEach(item => {
@@ -16,7 +16,7 @@ openMenuBtn.addEventListener('click', () => {
         line.style.backgroundColor = 'white'
     })
     document.body.style.overflow = 'hidden'
-})
+}
 
 const closeMenu = () => {
     navbarMenu.classList.remove('navbar-open')
@@ -29,6 +29,8 @@ const closeMenu = () => {
     })
     document.body.style.overflow = 'visible'
 }
+
+openMenuBtn.addEventListener('click', () => openMenu())
 
 closeMenuBtn.addEventListener('click', () => closeMenu())
 
@@ -189,7 +191,7 @@ const modal = document.querySelector('.modal')
 const modalInfo = document.querySelector('.modal-info')
 const closeModalWindowBtn = document.querySelector('.button-close')
 
-petsCardsList.addEventListener('click', e => {
+const openModal = e => {
     const itemId = e.target.parentNode.id
     modalWindow.style.display = 'flex'
     document.body.style.overflow = 'hidden'
@@ -214,7 +216,14 @@ petsCardsList.addEventListener('click', e => {
             modal.onclick = e => e.stopPropagation()
         }
     })
-})
+}
+
+const closeModal = () => {
+    modalWindow.style.display = 'none'
+    document.body.style.overflow = 'visible'
+}
+
+petsCardsList.addEventListener('click', e => openModal(e))
 
 modalWindow.addEventListener('mouseover', e => {
     if (e.target.classList.contains('modal-container')) {
@@ -224,12 +233,6 @@ modalWindow.addEventListener('mouseover', e => {
     }
 })
 
-closeModalWindowBtn.onclick = () => {
-    modalWindow.style.display = 'none'
-    document.body.style.overflow = 'visible'
-}
+closeModalWindowBtn.onclick = () => closeModal()
 
-modalWindow.onclick = () => {
-    modalWindow.style.display = 'none'
-    document.body.style.overflow = 'visible'
-}
+modalWindow.onclick = () => closeModal()
