@@ -33,7 +33,6 @@ a:hover,
 a:focus,
 a:active {
   text-decoration: none;
-  color: inherit;
 }
 
 ul,
@@ -294,6 +293,11 @@ header {
   transition: 0.3s;
 }
 
+@media (max-width: 767px) {
+  .navbar-item-link:hover {
+    color: #CDCDCD;
+  }
+}
 .navbar-item-link-active {
   padding-bottom: 3px;
   font-family: "Arial";

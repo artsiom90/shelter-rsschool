@@ -41,6 +41,25 @@ navbarLinks.forEach(link => link.addEventListener('click', e => {
     }
 }))
 
+const classListArray = [
+    'main',
+    'main-pets-container',
+    'main-container-pets',
+    'header-container-pets',
+    'section-pets-pets',
+    'section-pets-cards-list',
+    'footer-contacts',
+    'footer-container',
+]
+
+document.querySelector('body').onclick = e => {
+    for (const item of classListArray) {
+        if (e.target.classList.contains(item)) {
+            closeMenu()
+        }
+    }
+}
+
 //pets
 const petsCardsList = document.querySelector('.section-pets-cards-list')
 
@@ -95,7 +114,6 @@ const dataArray = petsDataArray.reduce((arr, item) => {
     arr.push({ ...item })
     return arr
 }, [])
-
 
 let currentPage = 1
 let perPage = petsCardsList.childElementCount
@@ -223,7 +241,11 @@ const closeModal = () => {
     document.body.style.overflow = 'visible'
 }
 
-petsCardsList.addEventListener('click', e => openModal(e))
+petsCardsList.addEventListener('click', e => {
+    if (!navbarMenu.classList.contains('navbar-open')) {
+        openModal(e)
+    }
+})
 
 modalWindow.addEventListener('mouseover', e => {
     if (e.target.classList.contains('modal-container')) {

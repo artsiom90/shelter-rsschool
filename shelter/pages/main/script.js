@@ -29,6 +29,23 @@ navbarLinks.forEach(link => link.addEventListener('click', e => {
     }
 }))
 
+const classListArray = [
+    'header-container',
+    'hero-container',
+    'section-hero-info',
+    'section-hero',
+    'section-hero-title',
+    'section-hero-desc',
+]
+
+document.querySelector('body').onclick = e => {
+    for (const item of classListArray) {
+        if (e.target.classList.contains(item)) {
+            closeMenu()
+        }
+    }
+}
+
 //slider
 const sliderCardsSection = document.querySelector('.section-pets-slider-cards')
 const sliderCards = document.querySelectorAll('.section-pets-slider-card')
