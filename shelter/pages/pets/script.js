@@ -78,7 +78,7 @@ function getInitData(number) {
     for (let i = 0; i < petsData.length; i++) {
         const template = `
         <div id=${petsData[i].id} class="section-pets-slider-card">
-            <img src=${petsData[i].img} alt="img">
+            <img src=${petsData[i].img} width="270" height="270" alt="img">
                 <div class="slider-card-name">${petsData[i].name}</div>
             <button class="button-transparent btn-transparent-hover">Learn more</button>
             <div style="height: 30px;"></div>

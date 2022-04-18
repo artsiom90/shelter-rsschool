@@ -55,7 +55,7 @@ const btnPrev = document.querySelectorAll('.button-prev')
 const cards = petsData.map(card => {
     const template = `
     <div id=${card.id} class="section-pets-slider-card">
-        <img src=${card.img} alt="img">
+        <img src=${card.img} width="270" height="270" alt="img">
             <div class="slider-card-name">${card.name}</div>
         <button class="button-transparent btn-transparent-hover">Learn more</button>
         <div style="height: 30px;"></div>

@@ -68,6 +68,7 @@
     background: #FAFAFA;
     border-radius: 9px;
     cursor: pointer;
+    animation: fadeIn 0.1s ease-out;
 }
 
 .section-pets-slider-card:hover .btn-transparent-hover {
@@ -135,6 +136,24 @@
     bottom: 0;
     right: 0;
     background: rgba(41, 41, 41, 0.6);
+    animation: fadeIn 0.1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    50% {
+        display: block;
+        opacity: 0.5;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
 }
 
 .btn-close-hover {
