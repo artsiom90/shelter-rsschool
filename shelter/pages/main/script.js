@@ -65,6 +65,33 @@ const cards = petsData.map(card => {
 })
 
 const prevCardsIndices = []
+console.log(prevCardsIndices);
+if (window.innerWidth > 1240) getInitData(3)
+if (window.innerWidth > 767 && window.innerWidth <= 1240) getInitData(2)
+if (window.innerWidth <= 767) getInitData(1)
+
+window.onresize = () => {
+    if (window.innerWidth > 1240) getInitData(3)
+    if (window.innerWidth > 767 && window.innerWidth <= 1240) getInitData(2)
+    if (window.innerWidth <= 767) getInitData(1)
+}
+
+function getInitData(number) {
+    sliderCardsSection.innerHTML = ''
+    for (let i = 0; i < petsData.length; i++) {
+        const template = `
+        <div id=${petsData[i].id} class="section-pets-slider-card">
+            <img src=${petsData[i].img} width="270" height="270" alt="img">
+                <div class="slider-card-name">${petsData[i].name}</div>
+            <button class="button-transparent btn-transparent-hover">Learn more</button>
+            <div style="height: 30px;"></div>
+        </div>
+    `
+        sliderCardsSection.innerHTML += template
+        prevCardsIndices.push(i)
+        if (i === number - 1) break
+    }
+}
 
 const getUniqueRandomIndices = arraySize => {
     let randomIndices = Array.apply(null, Array(arraySize))
@@ -79,7 +106,8 @@ const getUniqueRandomIndices = arraySize => {
 
 const changeSlides = () => {
     const indices = []
-    if (sliderCards.length === 3) indices.push(...getUniqueRandomIndices(3))
+
+    if (sliderCards.length === 3 || sliderCards.length === 0) indices.push(...getUniqueRandomIndices(3))
     if (sliderCards.length === 2) indices.push(...getUniqueRandomIndices(2))
     if (sliderCards.length === 1) indices.push(...getUniqueRandomIndices(1))
 

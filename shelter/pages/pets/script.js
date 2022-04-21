@@ -64,12 +64,12 @@ document.querySelector('body').onclick = e => {
 const petsCardsList = document.querySelector('.section-pets-cards-list')
 
 if (window.innerWidth > 870) getInitData(8)
-if (window.innerWidth <= 870) getInitData(6)
+if (window.innerWidth > 480 && window.innerWidth <= 870) getInitData(6)
 if (window.innerWidth <= 480) getInitData(3)
 
 window.onresize = () => {
     if (window.innerWidth > 870) getInitData(8)
-    if (window.innerWidth <= 870) getInitData(6)
+    if (window.innerWidth > 480 && window.innerWidth <= 870) getInitData(6)
     if (window.innerWidth <= 480) getInitData(3)
 }
 
