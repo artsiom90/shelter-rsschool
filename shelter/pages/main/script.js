@@ -9,12 +9,14 @@ const closeMenuBtn = document.querySelector('.header-burger-close')
 const openMenu = () => {
     navbarMenu.classList.add('navbar-open')
     document.querySelector('.header-logo').style.display = 'none'
+    document.querySelector('.header-shadow-block').style.display = 'block'
     document.body.style.overflow = 'hidden'
 }
 
 const closeMenu = () => {
     navbarMenu.classList.remove('navbar-open')
     document.querySelector('.header-logo').style.display = 'flex'
+    document.querySelector('.header-shadow-block').style.display = 'none'
     document.body.style.overflow = 'visible'
 }
 
@@ -29,22 +31,24 @@ navbarLinks.forEach(link => link.addEventListener('click', e => {
     }
 }))
 
-const classListArray = [
-    'header-container',
-    'hero-container',
-    'section-hero-info',
-    'section-hero',
-    'section-hero-title',
-    'section-hero-desc',
-]
+// const classListArray = [
+//     'header-container',
+//     'hero-container',
+//     'section-hero-info',
+//     'section-hero',
+//     'section-hero-title',
+//     'section-hero-desc',
+// ]
 
-document.querySelector('body').onclick = e => {
-    for (const item of classListArray) {
-        if (e.target.classList.contains(item)) {
-            closeMenu()
-        }
-    }
-}
+// document.querySelector('body').onclick = e => {
+//     for (const item of classListArray) {
+//         if (e.target.classList.contains(item)) {
+//             closeMenu()
+//         }
+//     }
+// }
+
+document.querySelector('.header-shadow-block').onclick = () => closeMenu()
 
 //slider
 const sliderCardsSection = document.querySelector('.section-pets-slider-cards')
@@ -55,7 +59,7 @@ const btnPrev = document.querySelectorAll('.button-prev')
 const cards = petsData.map(card => {
     const template = `
     <div id=${card.id} class="section-pets-slider-card">
-        <img src=${card.img} width="270" height="270" alt="img">
+        <img src=${card.img} alt="img">
             <div class="slider-card-name">${card.name}</div>
         <button class="button-transparent btn-transparent-hover">Learn more</button>
         <div style="height: 30px;"></div>
@@ -66,14 +70,14 @@ const cards = petsData.map(card => {
 
 const prevCardsIndices = []
 console.log(prevCardsIndices);
-if (window.innerWidth > 1240) getInitData(3)
-if (window.innerWidth > 767 && window.innerWidth <= 1240) getInitData(2)
-if (window.innerWidth <= 767) getInitData(1)
+if (window.innerWidth >= 1280) getInitData(3)
+if (window.innerWidth >= 768 && window.innerWidth < 1280) getInitData(2)
+if (window.innerWidth < 768) getInitData(1)
 
 window.onresize = () => {
-    if (window.innerWidth > 1240) getInitData(3)
-    if (window.innerWidth > 767 && window.innerWidth <= 1240) getInitData(2)
-    if (window.innerWidth <= 767) getInitData(1)
+    if (window.innerWidth >= 1280) getInitData(3)
+    if (window.innerWidth >= 768 && window.innerWidth < 1280) getInitData(2)
+    if (window.innerWidth < 768) getInitData(1)
 }
 
 function getInitData(number) {
@@ -81,7 +85,7 @@ function getInitData(number) {
     for (let i = 0; i < petsData.length; i++) {
         const template = `
         <div id=${petsData[i].id} class="section-pets-slider-card">
-            <img src=${petsData[i].img} width="270" height="270" alt="img">
+            <img src=${petsData[i].img} alt="img">
                 <div class="slider-card-name">${petsData[i].name}</div>
             <button class="button-transparent btn-transparent-hover">Learn more</button>
             <div style="height: 30px;"></div>

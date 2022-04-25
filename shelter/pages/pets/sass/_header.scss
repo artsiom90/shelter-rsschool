@@ -1,6 +1,7 @@
 .header-container-pets {
     display: flex;
     flex-wrap: wrap;
+    min-height: 120px;
 }
 
 .header-logo-pets {
@@ -53,6 +54,16 @@
     }
 }
 
+.header-shadow-block {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(41, 41, 41, 0.6);
+}
+
 .header-navbar-pets {
     margin-left: auto;
     margin-top: 46px;
@@ -69,7 +80,8 @@
     .header-navbar-pets {
         margin-top: 0;
         position: fixed;
-        width: calc(100% - 55px);
+        // width: calc(100% - 55px);
+        width: 320px;
         height: 100vh;
         top: 0;
         right: 0;
@@ -82,7 +94,7 @@
 
 @media(max-width:340px) {
     .header-navbar-pets {
-        width: calc(100%);
+        width: 100%;
     }
 }
 
@@ -104,7 +116,7 @@
 
 .navbar-open {
     transform: translateX(0);
-    box-shadow: 0 0 0 1000px rgba(41, 41, 41, 0.6);
+    // box-shadow: 0 0 0 1000px rgba(41, 41, 41, 0.6);
 }
 
 .navbar-item-link {

@@ -9,6 +9,7 @@ const closeMenuBtn = document.querySelector('.header-burger-pets-close')
 const openMenu = () => {
     navbarMenu.classList.add('navbar-open')
     document.querySelector('.header-logo-pets').style.display = 'none'
+    document.querySelector('.header-shadow-block').style.display = 'block'
     document.querySelectorAll('.navbar-item-link').forEach(item => {
         item.classList.add('navbar-mobile-color')
     })
@@ -21,6 +22,7 @@ const openMenu = () => {
 const closeMenu = () => {
     navbarMenu.classList.remove('navbar-open')
     document.querySelector('.header-logo-pets').style.display = 'flex'
+    document.querySelector('.header-shadow-block').style.display = 'none'
     document.querySelectorAll('.navbar-item-link').forEach(item => {
         item.classList.remove('navbar-mobile-color')
     })
@@ -41,36 +43,38 @@ navbarLinks.forEach(link => link.addEventListener('click', e => {
     }
 }))
 
-const classListArray = [
-    'main',
-    'main-pets-container',
-    'main-container-pets',
-    'header-container-pets',
-    'section-pets-pets',
-    'section-pets-cards-list',
-    'footer-contacts',
-    'footer-container',
-]
+// const classListArray = [
+//     'main',
+//     'main-pets-container',
+//     'main-container-pets',
+//     'header-container-pets',
+//     'section-pets-pets',
+//     'section-pets-cards-list',
+//     'footer-contacts',
+//     'footer-container',
+// ]
 
-document.querySelector('body').onclick = e => {
-    for (const item of classListArray) {
-        if (e.target.classList.contains(item)) {
-            closeMenu()
-        }
-    }
-}
+// document.querySelector('body').onclick = e => {
+//     for (const item of classListArray) {
+//         if (e.target.classList.contains(item)) {
+//             closeMenu()
+//         }
+//     }
+// }
+
+document.querySelector('.header-shadow-block').onclick = () => closeMenu()
 
 //pets
 const petsCardsList = document.querySelector('.section-pets-cards-list')
 
-if (window.innerWidth > 870) getInitData(8)
-if (window.innerWidth > 480 && window.innerWidth <= 870) getInitData(6)
-if (window.innerWidth <= 480) getInitData(3)
+if (window.innerWidth >= 1280) getInitData(8)
+if (window.innerWidth >= 768 && window.innerWidth < 1280) getInitData(6)
+if (window.innerWidth < 768) getInitData(3)
 
 window.onresize = () => {
-    if (window.innerWidth > 870) getInitData(8)
-    if (window.innerWidth > 480 && window.innerWidth <= 870) getInitData(6)
-    if (window.innerWidth <= 480) getInitData(3)
+    if (window.innerWidth >= 1280) getInitData(8)
+    if (window.innerWidth >= 768 && window.innerWidth < 1280) getInitData(6)
+    if (window.innerWidth < 768) getInitData(3)
 }
 
 function getInitData(number) {
@@ -78,7 +82,7 @@ function getInitData(number) {
     for (let i = 0; i < petsData.length; i++) {
         const template = `
         <div id=${petsData[i].id} class="section-pets-slider-card">
-            <img src=${petsData[i].img} width="270" height="270" alt="img">
+            <img src=${petsData[i].img} alt="img">
                 <div class="slider-card-name">${petsData[i].name}</div>
             <button class="button-transparent btn-transparent-hover">Learn more</button>
             <div style="height: 30px;"></div>
