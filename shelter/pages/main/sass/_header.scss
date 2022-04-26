@@ -5,7 +5,7 @@
 }
 
 .header-logo {
-    margin: 60px 15px 0 0;
+    margin: 30px 15px 0 0;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -66,7 +66,7 @@
 
 .header-navbar {
     margin-left: auto;
-    margin-top: 76px;
+    margin-top: 46px;
 }
 
 @media(max-width:850px) {
@@ -80,7 +80,6 @@
     .header-navbar {
         margin-top: 0;
         position: fixed;
-        // width: calc(100% - 55px);
         width: 320px;
         height: 100vh;
         top: 0;
@@ -116,7 +115,6 @@
 
 .navbar-open {
     transform: translateX(0);
-    // box-shadow: 0 0 0 1000px rgba(41, 41, 41, 0.6);
 }
 
 .navbar-item>a {

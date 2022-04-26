@@ -31,23 +31,6 @@ navbarLinks.forEach(link => link.addEventListener('click', e => {
     }
 }))
 
-// const classListArray = [
-//     'header-container',
-//     'hero-container',
-//     'section-hero-info',
-//     'section-hero',
-//     'section-hero-title',
-//     'section-hero-desc',
-// ]
-
-// document.querySelector('body').onclick = e => {
-//     for (const item of classListArray) {
-//         if (e.target.classList.contains(item)) {
-//             closeMenu()
-//         }
-//     }
-// }
-
 document.querySelector('.header-shadow-block').onclick = () => closeMenu()
 
 //slider
@@ -69,7 +52,7 @@ const cards = petsData.map(card => {
 })
 
 const prevCardsIndices = []
-console.log(prevCardsIndices);
+
 if (window.innerWidth >= 1280) getInitData(3)
 if (window.innerWidth >= 768 && window.innerWidth < 1280) getInitData(2)
 if (window.innerWidth < 768) getInitData(1)

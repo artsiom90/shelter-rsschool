@@ -43,39 +43,40 @@ navbarLinks.forEach(link => link.addEventListener('click', e => {
     }
 }))
 
-// const classListArray = [
-//     'main',
-//     'main-pets-container',
-//     'main-container-pets',
-//     'header-container-pets',
-//     'section-pets-pets',
-//     'section-pets-cards-list',
-//     'footer-contacts',
-//     'footer-container',
-// ]
+document.querySelector('.header-shadow-block').onclick = () => closeMenu()
 
-// document.querySelector('body').onclick = e => {
-//     for (const item of classListArray) {
-//         if (e.target.classList.contains(item)) {
-//             closeMenu()
-//         }
+//pagination
+const prevBtn = document.querySelector('.btn-prev')
+const nextBtn = document.querySelector('.btn-next')
+const startBtn = document.querySelector('.btn-start')
+const endBtn = document.querySelector('.btn-end')
+const pageNumber = document.querySelector('.page-number')
+const petsCardsList = document.querySelector('.section-pets-cards-list')
+
+// window.onresize = () => {
+//     if (window.innerWidth >= 1280) {
+//         getInitData(8)
+//         resizeArrayForPage(8)
+//     }
+//     if (window.innerWidth >= 768 && window.innerWidth < 1280) {
+//         getInitData(6)
+//         resizeArrayForPage(6)
+//     }
+//     if (window.innerWidth < 768) {
+//         getInitData(3)
+//         resizeArrayForPage(3)
 //     }
 // }
 
-document.querySelector('.header-shadow-block').onclick = () => closeMenu()
-
-//pets
-const petsCardsList = document.querySelector('.section-pets-cards-list')
-
-if (window.innerWidth >= 1280) getInitData(8)
-if (window.innerWidth >= 768 && window.innerWidth < 1280) getInitData(6)
-if (window.innerWidth < 768) getInitData(3)
-
-window.onresize = () => {
-    if (window.innerWidth >= 1280) getInitData(8)
-    if (window.innerWidth >= 768 && window.innerWidth < 1280) getInitData(6)
-    if (window.innerWidth < 768) getInitData(3)
+const shuffleArray = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]
+    }
+    return array
 }
+
+const petsDataArray = [...petsData]
 
 function getInitData(number) {
     petsCardsList.innerHTML = ''
@@ -93,35 +94,37 @@ function getInitData(number) {
     }
 }
 
-//pagination
-const prevBtn = document.querySelector('.btn-prev')
-const nextBtn = document.querySelector('.btn-next')
-const startBtn = document.querySelector('.btn-start')
-const endBtn = document.querySelector('.btn-end')
-const pageNumber = document.querySelector('.page-number')
+if (window.innerWidth >= 1280) getInitData(8)
+if (window.innerWidth >= 768 && window.innerWidth < 1280) getInitData(6)
+if (window.innerWidth < 768) getInitData(3)
 
-const petsDataArray = [...petsData]
-
-const shuffleArray = array => {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]
+const formCardsOrder = () => {
+    if (petsCardsList.childElementCount === 8) {
+        for (let i = 0; i < 5; i++) {
+            const shuffledData = [...shuffleArray(petsData)].reverse()
+            petsDataArray.push(...shuffledData)
+        }
     }
-    return array
+
+    if (petsCardsList.childElementCount === 6) {
+        for (let i = 0; i < 5; i++) {
+            const shuffledData = [...shuffleArray(petsData)].reverse()
+            petsDataArray.push(...shuffledData)
+        }
+    }
+    if (petsCardsList.childElementCount === 3) {
+        for (let i = 0; i < 5; i++) {
+            const shuffledData = [...shuffleArray(petsData)].reverse()
+            petsDataArray.push(...shuffledData)
+        }
+    }
 }
 
-for (let i = 0; i < 5; i++) {
-    petsDataArray.push(...shuffleArray(petsData))
-}
-
-const dataArray = petsDataArray.reduce((arr, item) => {
-    arr.push({ ...item })
-    return arr
-}, [])
+formCardsOrder()
 
 let currentPage = 1
 let perPage = petsCardsList.childElementCount
-let totalPages = () => dataArray.length / petsCardsList.childElementCount
+let totalPages = () => petsDataArray.length / petsCardsList.childElementCount
 
 function prevPage() {
     if (currentPage > 1) currentPage--
@@ -133,7 +136,45 @@ const nextPage = () => {
     changePage(currentPage)
 }
 
-const disableBtn = () => {
+function changePage(page) {
+    if (page < 1) page = 1
+    if (page > totalPages()) page = totalPages()
+
+    petsCardsList.innerHTML = ''
+    pageNumber.innerHTML = page
+
+    for (let i = (page - 1) * perPage; i < (page * perPage) && petsDataArray.length; i++) {
+        const template = `
+            <div id=${petsDataArray[i].id} class="section-pets-slider-card">
+                <img src=${petsDataArray[i].img} alt="img">
+                    <div class="slider-card-name">${petsDataArray[i].name}</div>
+                <button class="button-transparent btn-transparent-hover">Learn more</button>
+                <div style="height: 30px;"></div>
+            </div>
+            `
+        petsCardsList.innerHTML += template
+    }
+
+    disableBtn()
+}
+
+prevBtn.addEventListener('click', prevPage)
+nextBtn.addEventListener('click', nextPage)
+
+const switchToStartPage = () => {
+    currentPage = 1
+    changePage(1)
+}
+
+const switchToLastPage = () => {
+    currentPage = totalPages()
+    changePage(totalPages())
+}
+
+startBtn.addEventListener('click', switchToStartPage)
+endBtn.addEventListener('click', switchToLastPage)
+
+function disableBtn() {
     if (currentPage === 1) {
         document.querySelectorAll('.left-arrow-btn').forEach(btn => {
             btn.classList.add('disabled')
@@ -145,12 +186,16 @@ const disableBtn = () => {
             document.querySelector('.right-arrows-img').src = "../../assets/icons/right-arrows.svg"
             document.querySelector('.right-arrow-img').src = "../../assets/icons/right-arrow.svg"
         })
+        prevBtn.removeEventListener('click', prevPage)
+        startBtn.removeEventListener('click', switchToStartPage)
     } else {
         document.querySelectorAll('.left-arrow-btn').forEach(btn => {
             btn.classList.remove('disabled')
             document.querySelector('.left-arrows-img').src = "../../assets/icons/left-arrows.svg"
             document.querySelector('.left-arrow-img').src = "../../assets/icons/left-arrow.svg"
         })
+        prevBtn.addEventListener('click', prevPage)
+        startBtn.addEventListener('click', switchToStartPage)
     }
     if (currentPage === totalPages()) {
         document.querySelectorAll('.right-arrow-btn').forEach(btn => {
@@ -163,49 +208,20 @@ const disableBtn = () => {
             document.querySelector('.left-arrows-img').src = "../../assets/icons/left-arrows.svg"
             document.querySelector('.left-arrow-img').src = "../../assets/icons/left-arrow.svg"
         })
+        nextBtn.removeEventListener('click', nextPage)
+        endBtn.removeEventListener('click', switchToLastPage)
     } else {
         document.querySelectorAll('.right-arrow-btn').forEach(btn => {
             btn.classList.remove('disabled')
             document.querySelector('.right-arrows-img').src = "../../assets/icons/right-arrows.svg"
             document.querySelector('.right-arrow-img').src = "../../assets/icons/right-arrow.svg"
         })
+        nextBtn.addEventListener('click', nextPage)
+        endBtn.addEventListener('click', switchToLastPage)
     }
 }
 
 disableBtn()
-
-function changePage(page) {
-    if (page < 1) page = 1
-    if (page > totalPages()) page = totalPages()
-
-    petsCardsList.innerHTML = ''
-    pageNumber.innerHTML = page
-
-    for (let i = (page - 1) * perPage; i < (page * perPage) && dataArray.length; i++) {
-        const template = `
-            <div id=${dataArray[i].id} class="section-pets-slider-card">
-                <img src=${dataArray[i].img} alt="img">
-                    <div class="slider-card-name">${dataArray[i].name}</div>
-                <button class="button-transparent btn-transparent-hover">Learn more</button>
-                <div style="height: 30px;"></div>
-            </div>
-            `
-        petsCardsList.innerHTML += template
-    }
-
-    disableBtn()
-}
-
-prevBtn.onclick = () => prevPage()
-nextBtn.onclick = () => nextPage()
-startBtn.onclick = () => {
-    currentPage = 1
-    changePage(1)
-}
-endBtn.onclick = () => {
-    currentPage = totalPages()
-    changePage(totalPages())
-}
 
 //modal
 const modalWindow = document.querySelector('.modal-container')
