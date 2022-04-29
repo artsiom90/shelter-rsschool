@@ -53,21 +53,6 @@ const endBtn = document.querySelector('.btn-end')
 const pageNumber = document.querySelector('.page-number')
 const petsCardsList = document.querySelector('.section-pets-cards-list')
 
-// window.onresize = () => {
-//     if (window.innerWidth >= 1280) {
-//         getInitData(8)
-//         resizeArrayForPage(8)
-//     }
-//     if (window.innerWidth >= 768 && window.innerWidth < 1280) {
-//         getInitData(6)
-//         resizeArrayForPage(6)
-//     }
-//     if (window.innerWidth < 768) {
-//         getInitData(3)
-//         resizeArrayForPage(3)
-//     }
-// }
-
 const shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -76,7 +61,7 @@ const shuffleArray = array => {
     return array
 }
 
-const petsDataArray = [...petsData]
+const petsDataArray = []
 
 function getInitData(number) {
     petsCardsList.innerHTML = ''
@@ -98,24 +83,43 @@ if (window.innerWidth >= 1280) getInitData(8)
 if (window.innerWidth >= 768 && window.innerWidth < 1280) getInitData(6)
 if (window.innerWidth < 768) getInitData(3)
 
+window.onresize = () => {
+    if (window.innerWidth >= 1280) getInitData(8)
+    if (window.innerWidth >= 768 && window.innerWidth < 1280) getInitData(6)
+    if (window.innerWidth < 768) getInitData(3)
+}
+
+const getUniqueRandomIds = () => {
+    let randomIds = Array.apply(null, Array(petsCardsList.childElementCount))
+        .map(() => Math.floor((Math.random() * (petsData.length)) + 1))
+    if (new Set(randomIds).size !== randomIds.length) {
+        randomIds = getUniqueRandomIds()
+    }
+    return randomIds
+}
+
 const formCardsOrder = () => {
     if (petsCardsList.childElementCount === 8) {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 6; i++) {
             const shuffledData = [...shuffleArray(petsData)].reverse()
             petsDataArray.push(...shuffledData)
         }
     }
 
     if (petsCardsList.childElementCount === 6) {
-        for (let i = 0; i < 5; i++) {
-            const shuffledData = [...shuffleArray(petsData)].reverse()
-            petsDataArray.push(...shuffledData)
+        for (let i = 0; i < 48 / petsCardsList.childElementCount; i++) {
+            let randomIds = getUniqueRandomIds()
+            const data = randomIds
+                .map(item => (petsData.find(pet => pet.id === String(item))))
+            petsDataArray.push(...data)
         }
     }
     if (petsCardsList.childElementCount === 3) {
-        for (let i = 0; i < 5; i++) {
-            const shuffledData = [...shuffleArray(petsData)].reverse()
-            petsDataArray.push(...shuffledData)
+        for (let i = 0; i < 48 / petsCardsList.childElementCount; i++) {
+            let randomIds = getUniqueRandomIds()
+            const data = randomIds
+                .map(item => (petsData.find(pet => pet.id === String(item))))
+            petsDataArray.push(...data)
         }
     }
 }
