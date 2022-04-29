@@ -1,0 +1,151 @@
+.footer-container {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: url('../../assets/images/noise_transparent@2x.png'), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+
+@media (max-width: 850px) {
+    .footer-container {
+        padding-top: 0;
+    }
+}
+
+.footer-contacts {
+    padding-top: 16px;
+    display: flex;
+    gap: 160px;
+}
+
+.footer-contacts>div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+@media (max-width: 1200px) {
+    .footer-contacts {
+        flex: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 950px) {
+    .footer-contacts {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 850px) {
+    .footer-contacts {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 710px) {
+    .footer-contacts {
+        margin-bottom: 40px;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+.footer-contacts-left {
+    row-gap: 42px;
+}
+
+.footer-contacts-right {
+    row-gap: 32px;
+}
+
+@media(max-width: 480px) {
+
+    .footer-contacts-left {
+        align-items: center;
+    }
+
+    .footer-contacts-right {
+        row-gap: 40px;
+    }
+}
+
+.footer-title {
+    width: 280px;
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
+
+@media(max-width: 480px) {
+    .footer-title {
+        font-size: 25px;
+        align-self: center;
+        text-align: center;
+        letter-spacing: 1.5px;
+    }
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.contacts a {
+    display: inline-block;
+    max-width: 260px;
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 1.2px;
+    color: #F1CDB3;
+}
+
+.contacts a:hover {
+    color: #FDDCC4;
+    transition: 0.3s;
+}
+
+.contacts:last-child {
+    padding-bottom: 60px;
+}
+
+@media (max-width: 1200px) {
+    .contacts:last-child {
+        padding-bottom: 65px;
+    }
+}
+
+@media (max-width: 710px) {
+    .contacts:last-child {
+        padding-bottom: 0px;
+    }
+}
+
+.footer-img {
+    margin-left: auto;
+    height: 310px;
+    width: 300px;
+    background: url('../../assets/images/footer-puppy.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media (max-width: 1200px) {
+    .footer-img {
+        margin: auto;
+    }
+}
+
+@media(max-width: 480px) {
+    .footer-img {
+        height: 270px;
+        width: 260px;
+    }
+}

@@ -1,0 +1,112 @@
+.hero-container {
+    padding-top: 180px;
+    background: url('../../assets/images/noise_transparent@2x.png'), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+}
+
+@media(max-width:850px) {
+    .hero-container {
+        padding-top: 150px;
+    }
+}
+
+.section-hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 42px;
+}
+
+.section-hero-info {
+    padding-bottom: 100px;
+}
+
+.section-hero-info>*:not(:last-child) {
+    margin-bottom: 42px;
+}
+
+@media(max-width:480px) {
+    .section-hero-info {
+        padding-bottom: 105px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media(max-width:850px) {
+    .section-hero-btn {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.section-hero-title {
+    max-width: 310px;
+    padding-top: 163px;
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 130%;
+    color: #FFFFFF;
+}
+
+@media(max-width:1279px) {
+    .section-hero-title {
+        padding-top: 0;
+    }
+}
+
+@media(max-width:480px) {
+    .section-hero-title {
+        width: 230px;
+        font-size: 25px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 1.5px;
+    }
+}
+
+.section-hero-desc {
+    max-width: 460px;
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #CDCDCD;
+}
+
+@media(max-width:480px) {
+    .section-hero-desc {
+        padding: 0 30px;
+    }
+}
+
+@media(max-width:340px) {
+    .section-hero-desc {
+        padding: 0;
+    }
+}
+
+.section-hero-img {
+    margin-left: auto;
+    height: 728px;
+    width: 698px;
+    background: url('../../assets/images/start-screen-puppy.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media(max-width:1024px) {
+    .section-hero-img {
+        height: 593px;
+        width: 569px;
+    }
+}
+
+@media(max-width:630px) {
+    .section-hero-img {
+        height: 272px;
+        width: 260px;
+    }
+}
