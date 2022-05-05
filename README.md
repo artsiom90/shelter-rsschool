@@ -1,4 +1,3 @@
-# artsiom90-JSFE2022Q1
-Private repository for @artsiom90
+#Portfolio site https://artsiom90.github.io/portfolio-rsschool/portfolio
 
-https://rolling-scopes-school.github.io/artsiom90-JSFE2022Q1/shelter/pages/main/
+#Shelter site https://artsiom90.github.io/shelter-rsschool/shelter/pages/main/
